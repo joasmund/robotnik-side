@@ -1,22 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, Cpu, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import {Header} from "@/components/ui/header"
+
 
 export default function RobotnikLandingPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-blue-500">Robotnik</Link>
-          <nav className="space-x-4">
-            <Button variant="ghost">About</Button>
-            <Button variant="ghost">Events</Button>
-            <Button variant="ghost">Projects</Button>
-            <Button variant="ghost">Contact</Button>
-          </nav>
-        </div>
-      </header>
-
+      <Header/>
       <main>
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
           <video
@@ -29,10 +20,10 @@ export default function RobotnikLandingPage() {
             <source src="/placeholder.mp4" type="video/mp4" />
           </video>
           <div className="relative z-10 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">Welcome to Robotnik</h1>
-            <p className="text-xl md:text-2xl mb-8">The future of robotics starts here</p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">Robotnik NMBU</h1>
+            <p className="text-xl md:text-2xl mb-8">Framtidens robotikk starter her</p>
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">
-              Get Involved <ChevronRight className="ml-2" />
+              Involver deg <ChevronRight className="ml-2" />
             </Button>
           </div>
         </section>
