@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/ui/footer"
 import { Header } from "@/components/ui/header"
 import { Users, Book, Award } from "lucide-react"
-import Link from "next/link"
 
 export default function AboutPage() {
   return (

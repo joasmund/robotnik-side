@@ -34,7 +34,7 @@ export default function ProjectsPage() {
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Our Projects</h1>
             <p className="text-xl text-center mb-12 max-w-3xl mx-auto">
-              Explore the cutting-edge robotics projects our students are working on. From autonomous systems to AI-powered robots, we're pushing the boundaries of what's possible.
+              Explore the cutting-edge robotics projects our students are working on. From autonomous systems to AI-powered robots, were pushing the boundaries of whats possible.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8">Have a Project Idea?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              We're always looking for new and exciting robotics projects. If you have an idea, we'd love to hear about it and potentially help bring it to life!
+              Were always looking for new and exciting robotics projects. If you have an idea, wed love to hear about it and potentially help bring it to life!
             </p>
             
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">

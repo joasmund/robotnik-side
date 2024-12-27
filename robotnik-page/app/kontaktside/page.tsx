@@ -3,7 +3,6 @@ import { Header } from "@/components/ui/header"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin } from "lucide-react"
-import { HeadManagerContext } from "next/dist/server/route-modules/pages/vendored/contexts/entrypoints"
 import Link from "next/link"
 
 export default function ContactPage() {
@@ -16,7 +15,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Contact Us</h1>
             <p className="text-xl text-center mb-12 max-w-3xl mx-auto">
-              Have questions or want to get involved? We'd love to hear from you! Reach out to us using the form below or through our contact information.
+              Have questions or want to get involved? Wed love to hear from you! Reach out to us using the form below or through our contact information.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>

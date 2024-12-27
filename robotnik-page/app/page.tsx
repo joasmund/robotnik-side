@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Calendar, Users, Cpu, ChevronRight } from "lucide-react"
+import { Calendar, Cpu, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import {Header} from "@/components/ui/header"
 

@@ -10,11 +10,11 @@ const Header = () =>
             </Link>
 
             <nav className="space-x-2">
-                <Button variant="ghost"><Link href="/omside">Om</Link></Button>
+                <Button variant="ghost"><Link href="/omside">Om oss</Link></Button>
                 <Button variant="ghost"><Link href="/arrangementside">Arrangementer</Link></Button>
                 <Button variant="ghost"><Link href="/prosjektside">Prosjekter</Link></Button>
-                <Button variant="ghost"><Link href="/kontaktside">Kontakt</Link>
-                </Button>
+                <Button variant="ghost"><Link href="/bloggside">Blogg</Link></Button>
+                <Button variant="ghost"><Link href="/kontaktside">Kontakt</Link></Button>
             </nav>
         </div>
     </header>

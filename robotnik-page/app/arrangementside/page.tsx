@@ -67,11 +67,10 @@ export default function EventsPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8">Want to host an event?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              If you have an idea for a robotics-related event, we'd love to hear from you! 
-              Robotnik supports student-led initiatives and can help you bring your event to life.
+              Har du en idé til et arrangement eller en workshop du ønsker å arrangere? Vi hjelper deg gjerne med å planlegge og promotere det!
             </p>
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">
-              Propose an Event
+              Foreslå et arrangement
             </Button>
           </div>
         </section>

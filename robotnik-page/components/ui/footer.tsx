@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
+import Image from "next/image"
 
 const Footer = () => (
   <footer className="bg-background border-t">
@@ -26,19 +27,19 @@ const Footer = () => (
           <h4 className="text-sm font-semibold mb-4">Våre platformer</h4>
           <div className="flex space-x-4">
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <img src="/facebook.svg" alt="Facebook" width={20} height={20} />
+              <Image src="/facebook.svg" alt="Facebook" width={20} height={20} />
               <span className="sr-only">Facebook</span>
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <img src="/instagram.svg" alt="Instagram" width={20} height={20} />
+              <Image src="/instagram.svg" alt="Instagram" width={20} height={20} />
               <span className="sr-only">Instagram</span>
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <img src="/linkedin.svg" alt="LinkedIn" width={20} height={20} />
+              <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <img src="/github.svg" alt="GitHub" width={20} height={20} />
+              <Image src="/github.svg" alt="GitHub" width={20} height={20} />
               <span className="sr-only">GitHub</span>
             </Link>
           </div>
