@@ -10,14 +10,37 @@ import { useEffect, useState } from "react"
 
 export default function RobotnikLandingPage() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-  }, []);
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header />
+      <div className={`fixed w-full z-50 transition-transform duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <Header isScrolled={isScrolled} />
+      </div>
+      
       <main>
         <section className="relative h-screen flex items-center justify-center overflow-hidden pt-2">
           <Image
@@ -26,12 +49,17 @@ export default function RobotnikLandingPage() {
             fill
             style={{ objectFit: "cover" }}
             className={`transition-transform duration-1000 ${isLoaded ? 'scale-100' : 'scale-125'}`}
+            priority
           />
-          <div className="relative z-10 text-center mt-20">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-200">Robotnik NMBU</h1>
-            <p className="text-xl md:text-2xl mb-8">Framtidens robotikk starter her</p>
+          <div className="relative z-10 text-center mt-96">
+            <h1 className={`text-5xl md:text-7xl font-bold mb-4 text-gray-200 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              Robotnik NMBU
+            </h1>
+            <p className={`text-xl md:text-2xl mb-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              Framtidens robotikk starter her
+            </p>
             <Link href="/kontaktside">
-              <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white mt-20">
+              <Button size="lg" className={`bg-[#459D84] hover:bg-[#367d69] text-white mt-20 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 Involver deg <ChevronRight className="ml-2" />
               </Button>
             </Link>
@@ -47,7 +75,7 @@ export default function RobotnikLandingPage() {
                   <Calendar className="w-12 h-12 mb-4 text-blue-500" />
                   <h3 className="text-xl font-semibold mb-2">Robotics Workshop {event}</h3>
                   <p className="text-gray-300 mb-4">Join us for an exciting hands-on robotics workshop!</p>
-                  <Button variant="outline">Learn More</Button>
+                  <Button variant="color=grey-500">Learn More</Button>
                 </div>
               ))}
             </div>
@@ -56,5 +84,5 @@ export default function RobotnikLandingPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
