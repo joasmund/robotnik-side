@@ -64,7 +64,7 @@ export default function RobotnikLandingPage() {
               Framtidens robotikk starter her
             </p>
             <Link href="/kontaktside">
-              <Button size="lg" className={`bg-[#459D84] hover:bg-[#367d69] text-white transition-all duration-1000 delay-500 ${
+              <Button size="lg" className={`bg-[#459D84] hover:bg-[#367d69] text-white transition-all duration-300 delay-100 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 Involver deg <ChevronRight className="ml-2" />
