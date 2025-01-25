@@ -26,19 +26,19 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold mb-4 text-gray-900">Våre platformer</h4> {/* Changed text color to text-gray-900 */}
           <div className="flex space-x-4">
-            <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.facebook.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/facebook.svg" alt="Facebook" width={20} height={20} />
               <span className="sr-only">Facebook</span>
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.instagram.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/instagram.svg" alt="Instagram" width={20} height={20} />
               <span className="sr-only">Instagram</span>
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.linkedin.com/company/robotnik-nmbu/" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.github.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/github.svg" alt="GitHub" width={20} height={20} />
               <span className="sr-only">GitHub</span>
             </Link>
