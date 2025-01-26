@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, MapPin } from "lucide-react"
 import Link from "next/link"
-import {Header} from "@/components/ui/header"
 
 export default function EventsPage() {
   const events = [
@@ -30,7 +29,6 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header/>
 
       <main className="pt-20">
         <section className="py-20 bg-gray-800">
