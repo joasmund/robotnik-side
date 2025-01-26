@@ -1,6 +1,4 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 
@@ -9,10 +7,7 @@ const Footer = () => (
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">Robotnik</h3> {/* Changed text color to text-gray-900 */}
-          <p className="text-sm text-gray-600">
-            Shaping the future of robotics through innovation and education.
-          </p>
+          <Image src="/Robotnikwide.png" alt="Robotnik logo" width={200} height={120} />
         </div>
         <div>
           <h4 className="text-sm font-semibold mb-4 text-gray-900">Quick Links</h4> {/* Changed text color to text-gray-900 */}
@@ -45,11 +40,7 @@ const Footer = () => (
           </div>
         </div>
         <div>
-          <h4 className="text-sm font-semibold mb-4 text-gray-900">Subscribe to Our Newsletter</h4> {/* Changed text color to text-gray-900 */}
-          <form className="space-y-2">
-            <Input type="email" placeholder="Enter your email" />
-            <Button type="submit" className="w-full">Subscribe</Button>
-          </form>
+          <Image src="/Robotnikwide.png" alt="Robotnik logo" width={200} height={120} />
         </div>
       </div>
       <Separator className="my-8" />
@@ -57,11 +48,11 @@ const Footer = () => (
         <p className="text-sm text-gray-600">
           © {new Date().getFullYear()} Robotnik. All rights reserved.
         </p>
-        <div className="flex space-x-4 mt-4 md:mt-0">
+        {/* <div className="flex space-x-4 mt-4 md:mt-0">
           <Link href="/privacy" className="text-sm text-gray-600 hover:text-primary transition-colors">
             Privacy Policy
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   </footer>
