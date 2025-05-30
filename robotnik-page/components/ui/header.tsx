@@ -2,7 +2,11 @@ import Link from 'next/link'
 import { Button } from './button'
 import Image from 'next/image'
 
-const Header = ({ isScrolled }) =>
+interface HeaderProps {
+    isScrolled: boolean;
+}
+
+const Header = ({ isScrolled }: HeaderProps) =>
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-gray-900/70 backdrop-blur-sm' : ''
     }`}>

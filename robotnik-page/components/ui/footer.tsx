@@ -40,7 +40,11 @@ const Footer = () => (
           </div>
         </div>
         <div>
-          <Image src="/Robotnikwide.png" alt="Robotnik logo" width={200} height={120} />
+          <Image src="/Thorvald.png" alt="Thorvald logo" width={200} height={120} />
+          <Separator className="my-8" />
+          <Image src="/Kameleon.png" alt="kameleon logo" width={200} height={120} />
+  
+          
         </div>
       </div>
       <Separator className="my-8" />

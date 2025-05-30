@@ -1,13 +1,46 @@
-import { Button } from "@/components/ui/button"
-import { Footer } from "@/components/ui/footer"
-import Link from "next/link"
-import { Header } from "@/components/ui/header"
-import { Users, Book, Award } from "lucide-react"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Award, Book, Users } from "lucide-react";
+import Link from "next/link";
+import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
+import { useEffect, useState } from "react";
+
+
 
 export default function AboutPage() {
+
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header/>
+      <header className={`fixed w-full z-50 transition-transform duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <Header isScrolled={isScrolled} />
+      </header>
 
       <main className="pt-20">
         <section className="py-20 bg-gray-800">
