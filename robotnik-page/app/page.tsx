@@ -51,14 +51,44 @@ export default function RobotnikLandingPage() {
       </header>
 
       <main>
-        <section className="relative">
+        <section className="relative h-screen flex items-start overflow-hidden">
+          <Image
+            src="/sagaatnight.webp"
+            alt="Saga Robotics at night"
+            fill
+            quality={90}
+            priority
+            style={{ objectFit: "cover" }}
+            className={`transition-transform duration-1000 ${isLoaded ? 'scale-100' : 'scale-125'}`}
+          />
+          <div className="relative z-10 pl-8 pt-32 text-left mt-60 ml-60">
+            <h1 className={`text-5xl md:text-7xl font-bold mb-4 text-gray-200 transition-all duration-1000 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              Robotnik NMBU
+            </h1>
+            <p className={`text-xl md:text-2xl mb-8 transition-all duration-1000 delay-300 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              Linjeforeningen for anvendt robotikk ved NMBU
+            </p>
+            <Link href="/kontaktside">
+              <Button size="lg" className={`bg-[#9597ad] hover:bg-[#367d70] text-white transition-all duration-300 delay-100 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                Involver deg <ChevronRight className="ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </section>
+        {/* <section className="relative">
           <Card className="sticky top-0 w-full h-screen bg-black/[0.96] z-10">
             <Spotlight
               className="-top-40 left-0 md:left-60 md:-top-20"
               fill="white"
             />
             <div className="flex h-full">
-              {/* Left content */}
+
               <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
                 <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
                   Robotnik NMBU
@@ -67,7 +97,7 @@ export default function RobotnikLandingPage() {
                   Framtidens robotikk starter her
                 </p>
               </div>
-              {/* Right content */}
+
               <div className="flex-1 relative h-full overflow-hidden">
                 <SplineScene 
                   scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -95,11 +125,11 @@ export default function RobotnikLandingPage() {
               </Link>
             </div>
           </Card>
-          {/* Add more content below to enable scrolling */}
+
           <div className="h-[200vh] bg-gray-800">
-            {/* Replace with your actual content */}
+
           </div>
-        </section>
+        </section> */}
         
       </main>
       <Footer />
