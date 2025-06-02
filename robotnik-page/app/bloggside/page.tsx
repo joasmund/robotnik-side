@@ -1,72 +1,74 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Footer } from "@/components/ui/footer"
+"use client";
 
-// This would typically come from a database or CMS
-const blogPosts = [
-  {
-    id: 1,
-    title: "Advancements in Swarm Robotics",
-    description: "Exploring the latest developments in swarm robotics and their potential applications.",
-    date: "2023-05-15",
-    slug: "advancements-in-swarm-robotics"
-  },
-  {
-    id: 2,
-    title: "The Role of AI in Modern Robotics",
-    description: "How artificial intelligence is shaping the future of robotics and automation.",
-    date: "2023-05-22",
-    slug: "role-of-ai-in-modern-robotics"
-  },
-  {
-    id: 3,
-    title: "Robotics in Healthcare: A New Frontier",
-    description: "Examining the growing impact of robotics in healthcare and medical procedures.",
-    date: "2023-05-29",
-    slug: "robotics-in-healthcare"
-  }
-]
+
+import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
+
 
 export default function BlogPage() {
-  return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <header className="bg-background/90 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-primary">Robotnik</Link>
-          <nav className="space-x-2">
-            <Button variant="ghost" asChild><Link href="/about">About</Link></Button>
-            <Button variant="ghost" asChild><Link href="/events">Events</Link></Button>
-            <Button variant="ghost" asChild><Link href="/projects">Projects</Link></Button>
-            <Button variant="ghost" asChild><Link href="/blog">Blog</Link></Button>
-            <Button variant="ghost" asChild><Link href="/contact">Contact</Link></Button>
-          </nav>
-        </div>
-      </header>
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-6">Robotnik Blog</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.map((post) => (
-            <Card key={post.id}>
-              <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
-                <CardDescription>{post.date}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>{post.description}</p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild>
-                  <Link href={`/blog/${post.slug}`}>Read More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+
+    return (
+        <div className="min-h-screen bg-gray-900 text-gray-100">
+            <header className={`fixed w-full z-50 transition-transform duration-300 ${
+            showHeader ? 'translate-y-0' : '-translate-y-full'
+            }`}>
+            <Header isScrolled={isScrolled} />
+            </header>
+
+            <main>
+        <section className="relative h-screen flex items-start overflow-hidden">
+          <Image
+            src="/sagaatnight.webp"
+            alt="Saga Robotics at night"
+            fill
+            quality={90}
+            priority
+            style={{ objectFit: "cover" }}
+            className={`transition-transform duration-1000 ${isLoaded ? 'scale-100' : 'scale-125'}`}
+          />
+          <div className="relative z-10 pl-8 pt-32 text-left mt-60 ml-60">
+            <h1 className={`text-5xl md:text-7xl font-bold mb-4 text-gray-200 transition-all duration-1000 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              Robotnik-Bloggen kommer snart!
+            </h1>
+            <p className={`text-xl md:text-2xl mb-8 transition-all duration-1000 delay-300 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              Her kommer det en blogg med spennende innhold om robotikk og teknologi, og alt som skjer hos Robotnik.
+            </p>
+          </div>
+        </section>
       </main>
-
       <Footer />
+      <Analytics />
     </div>
-  )
-}
+  );
+};

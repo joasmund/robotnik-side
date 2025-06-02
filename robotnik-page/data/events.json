@@ -1,0 +1,73 @@
+
+{
+    "events": [
+        
+        {
+            "id": "3",
+            "title": "Allmøte",
+            "date": "2025-10-20T18:00:00Z",
+            "description": "Vårens allmøte er rett rundt hjørnet. Vi skal diskutere viktige saker og velge nye medlemmer til styret. Møt opp og vær med på å forme Robotnik! \n \n For mer informasjon og nominasjonsskjema, sjekk Facebook-gruppen vår.",
+            "location": "U120",
+            "imagePath": "/allmote.webp",
+            "imageWidth": "512",
+            "imageHeight": "512"
+        },
+        {
+            "id": "4",
+            "title": "Hackathon",
+            "date": "2025-12-05T08:00:00Z",
+            "description": "Build a project in 24 hours",
+            "location": "University Campus",
+            "imagePath": ""
+        },
+        {
+            "id": "5",
+            "title": "Code Camp",
+            "date": "2026-02-15T10:00:00Z",
+            "description": "Learn to code in a fun and interactive way",
+            "location": "Tech Park",
+            "imagePath": ""
+        },
+        {
+            "id": "6",
+            "title": "Tech Conference",
+            "date": "2026-04-25T09:00:00Z",
+            "description": "Attend talks and workshops on the latest tech trends",
+            "location": "Convention Center",
+            "imagePath": ""
+        },
+        {
+            "id": "7",
+            "title": "Robotics Workshop",
+            "date": "2026-06-10T14:00:00Z",
+            "description": "Learn to build and program robots",
+            "location": "Tech Park",
+            "imagePath": ""
+        },
+        {
+            "id": "8",
+            "title": "Tech Expo",
+            "date": "2026-08-30T10:00:00Z",
+            "description": "Explore the latest tech products and services",
+            "location": "Convention Center",
+            "imagePath": ""
+        },
+        {
+            "id": "9",
+            "title": "Code Retreat",
+            "date": "2026-10-20T09:00:00Z",
+            "description": "Spend a day coding with other developers",
+            "location": "Community Center",
+            "imagePath": ""
+        },
+        {
+            "id": "10",
+            "title": "Tech Startup Pitch",
+            "date": "2026-12-05T14:00:00Z",
+            "description": "Pitch your tech startup idea to investors",
+            "location": "University Campus",
+            "imagePath": ""
+        }
+
+    ]
+  }

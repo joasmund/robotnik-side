@@ -1,102 +1,139 @@
-import { Button } from "@/components/ui/button"
-import { Calendar, Cpu, ChevronRight } from "lucide-react"
-import Link from "next/link"
-import {Header} from "@/components/ui/header"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { getUpcomingEvents } from "@/utils/eventUtils";
+import { ChevronRight } from "lucide-react";
+import { EventCard } from "@/components/ui/EventCard";  
+import { Analytics } from "@vercel/analytics/next";
+import { SplineScene } from "@/components/ui/splite";
+import { Card } from "@/components/ui/testcard"
+import { Spotlight } from "@/components/ui/spotlight"
+
 
 
 export default function RobotnikLandingPage() {
+  const upcomingEvents = getUpcomingEvents(3);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header/>
+      <header className={`fixed w-full z-50 transition-transform duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <Header isScrolled={isScrolled} />
+      </header>
+
       <main>
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            className="absolute w-full h-full object-cover"
-            poster="/placeholder.svg?height=1080&width=1920"
-          >
-            <source src="/placeholder.mp4" type="video/mp4" />
-          </video>
-          <div className="relative z-10 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">Robotnik NMBU</h1>
-            <p className="text-xl md:text-2xl mb-8">Framtidens robotikk starter her</p>
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">
-              Involver deg <ChevronRight className="ml-2" />
-            </Button>
+        <section className="relative h-screen flex items-start overflow-hidden">
+          <Image
+            src="/sagaatnight.webp"
+            alt="Saga Robotics at night"
+            fill
+            quality={90}
+            priority
+            style={{ objectFit: "cover" }}
+            className={`transition-transform duration-1000 ${isLoaded ? 'scale-100' : 'scale-125'}`}
+          />
+          <div className="relative z-10 pl-8 pt-32 text-left mt-60 ml-60">
+            <h1 className={`text-5xl md:text-7xl font-bold mb-4 text-gray-200 transition-all duration-1000 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              Robotnik NMBU
+            </h1>
+            <p className={`text-xl md:text-2xl mb-8 transition-all duration-1000 delay-300 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              Linjeforeningen for anvendt robotikk ved NMBU
+            </p>
+            <Link href="/kontaktside">
+              <Button size="lg" className={`bg-[#9597ad] hover:bg-[#367d70] text-white transition-all duration-300 delay-100 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                Involver deg <ChevronRight className="ml-2" />
+              </Button>
+            </Link>
           </div>
         </section>
+        {/* <section className="relative">
+          <Card className="sticky top-0 w-full h-screen bg-black/[0.96] z-10">
+            <Spotlight
+              className="-top-40 left-0 md:left-60 md:-top-20"
+              fill="white"
+            />
+            <div className="flex h-full">
 
-        <section className="py-20 bg-gray-800">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Upcoming Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((event) => (
-                <div key={event} className="bg-gray-700 rounded-lg p-6 hover:shadow-lg transition duration-300">
-                  <Calendar className="w-12 h-12 mb-4 text-blue-500" />
-                  <h3 className="text-xl font-semibold mb-2">Robotics Workshop {event}</h3>
-                  <p className="text-gray-300 mb-4">Join us for an exciting hands-on robotics workshop!</p>
-                  <Button variant="outline">Learn More</Button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                  Robotnik NMBU
+                </h1>
+                <p className="mt-4 text-neutral-300 max-w-lg">
+                  Framtidens robotikk starter her
+                </p>
+              </div>
 
-        <section className="py-20 bg-gray-900">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Our Partners</h2>
-            <div className="flex flex-wrap justify-center items-center gap-12">
-              {[1, 2, 3, 4].map((partner) => (
-                <div key={partner} className="w-40 h-40 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-blue-500">Partner {partner}</span>
-                </div>
-              ))}
+              <div className="flex-1 relative h-full overflow-hidden">
+                <SplineScene 
+                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+            <div className="relative z-10 px-8 pt-32 text-left">
+              <h1 className={`text-5xl md:text-7xl font-bold mb-4 text-gray-200 transition-all duration-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                Robotnik NMBU
+              </h1>
+              <p className={`text-xl md:text-2xl mb-8 transition-all duration-1000 delay-300 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                Framtidens robotikk starter her
+              </p>
+              <Link href="/kontaktside">
+                <Button size="lg" className={`bg-[#9597ad] hover:bg-[#367d70] text-white transition-all duration-300 delay-100 ${
+                  isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}>
+                  Involver deg <ChevronRight className="ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </Card>
 
-        <section className="py-20 bg-gray-800">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[1, 2].map((project) => (
-                <div key={project} className="bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
-                  <div className="h-64 bg-gray-600 flex items-center justify-center">
-                    <Cpu className="w-24 h-24 text-blue-500" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">Robotics Project {project}</h3>
-                    <p className="text-gray-300 mb-4">An innovative project pushing the boundaries of robotics.</p>
-                    <Button variant="outline">View Project</Button>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="h-[200vh] bg-gray-800">
+
           </div>
-        </section>
+        </section> */}
+        
       </main>
-
-      <footer className="bg-gray-900 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-8 md:mb-0">
-              <h3 className="text-2xl font-bold text-blue-500 mb-2">Robotnik</h3>
-              <p className="text-gray-400">Shaping the future of robotics</p>
-            </div>
-            <nav className="flex flex-wrap justify-center gap-4">
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">About</Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">Events</Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">Projects</Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">Contact</Link>
-            </nav>
-          </div>
-          <div className="mt-8 text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Robotnik. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
+      <Analytics />
     </div>
-  )
+  );
 }

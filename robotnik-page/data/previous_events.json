@@ -1,0 +1,34 @@
+{
+    "events": [
+        {
+            "id": "1",
+            "title": "Båltur",
+            "date": "2025-02-25T06:00:00Z",
+            "description": "Vi sparker i gang Quizcupen med god stemning, kunnskap og snacks! Vi gleder oss til å se deg!",
+            "location": "TF3-102",
+            "imagePath": "/quizcup.jpg",
+            "imageWidth": "1024",
+            "imageHeight": "768"
+        },
+        {
+            "id": "1",
+            "title": "Quizcup 1",
+            "date": "2025-02-25T06:00:00Z",
+            "description": "Vi sparker i gang Quizcupen med god stemning, kunnskap og snacks! Vi gleder oss til å se deg!",
+            "location": "TF3-102",
+            "imagePath": "/quizcup.jpg",
+            "imageWidth": "341",
+            "imageHeight": "254"
+        },
+        {
+            "id": "2",
+            "title": "Bedriftsbesøk Saga Robotics",
+            "date": "2025-08-30T09:00:00Z",
+            "description": "Vi besøker Saga Robotics for å se hvordan de jobber med roboter og AI. Vi møter til og med selveste Lars Grimstad! \nPåmelding innen 25. februar.",
+            "location": "Saga Robotics",
+            "imagePath": "/Thorvald.png",
+            "imageWidth": "222",
+            "imageHeight": "60"
+        }
+    ]
+}

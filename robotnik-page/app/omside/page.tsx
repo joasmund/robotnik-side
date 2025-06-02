@@ -1,12 +1,46 @@
-import { Button } from "@/components/ui/button"
-import { Footer } from "@/components/ui/footer"
-import { Header } from "@/components/ui/header"
-import { Users, Book, Award } from "lucide-react"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Award, Book, Users } from "lucide-react";
+import Link from "next/link";
+import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
+import { useEffect, useState } from "react";
+
+
 
 export default function AboutPage() {
+
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header/>
+      <header className={`fixed w-full z-50 transition-transform duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <Header isScrolled={isScrolled} />
+      </header>
 
       <main className="pt-20">
         <section className="py-20 bg-gray-800">
@@ -25,7 +59,7 @@ export default function AboutPage() {
               </div>
               <div className="bg-gray-700 rounded-lg p-6 text-center">
                 <Book className="w-12 h-12 mx-auto mb-4 text-blue-500" />
-                <h2 className="text-2xl font-semibold mb-2">Learning Opportunities</h2>
+                <h2 className="text-2xl font-semibold mb-2">Vår oppgave</h2>
                 <p className="text-gray-300">
                     Vi arrangerer workshops, foredrag og hackathons for å gi studentene muligheten til å lære mer om robotikk og teknologi. Samarbeid med våre partnere gir oss tilgang til spennende prosjekter og muligheter.
                 </p>
@@ -48,9 +82,11 @@ export default function AboutPage() {
               Robotnik skal være en inkluderende og inspirerende linjeforening som gir studentene muligheten til å utforske og utvikle sin lidenskap for robotikk og teknologi. Vi jobber for å fremme innovasjon og samarbeid, og for å skape et sterkt faglig og sosialt fellesskap.
             </p>
             <div className="flex justify-center">
-              <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">
-                Join Robotnik
-              </Button>
+              <Link href="/kontaktside">
+                <Button size="lg" className="bg-[#459D84] hover:bg-[#367d69] text-white">
+                  Bli med da vel!
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

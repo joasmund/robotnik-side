@@ -1,14 +1,45 @@
-import { Button } from "@/components/ui/button"
-import { Header } from "@/components/ui/header"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
-import Link from "next/link"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
+import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function ContactPage() {
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header/> 
+      <header className={`fixed w-full z-50 transition-transform duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <Header isScrolled={isScrolled} />
+      </header>
 
       <main className="pt-20">
         <section className="py-20 bg-gray-800">
@@ -49,7 +80,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center">
                       <MapPin className="w-6 h-6 mr-4 text-blue-500" />
-                      <span>NMBU Campus, Ås, Norway</span>
+                      <span>Postboks 800 NMBU, 1433 Ås</span>
                     </div>
                   </div>
                 </div>
@@ -58,40 +89,14 @@ export default function ContactPage() {
                   <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                   <p>Saturday - Sunday: Closed</p>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Follow Us</h2>
-                  <div className="flex space-x-4">
-                    <a href="#" className="text-blue-500 hover:text-blue-400">Twitter</a>
-                    <a href="#" className="text-blue-500 hover:text-blue-400">Facebook</a>
-                    <a href="#" className="text-blue-500 hover:text-blue-400">LinkedIn</a>
-                    <a href="#" className="text-blue-500 hover:text-blue-400">Instagram</a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-gray-900 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-8 md:mb-0">
-              <h3 className="text-2xl font-bold text-blue-500 mb-2">Robotnik</h3>
-              <p className="text-gray-400">Shaping the future of robotics</p>
-            </div>
-            <nav className="flex flex-wrap justify-center gap-4">
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">About</Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">Events</Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">Projects</Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-500 transition duration-300">Contact</Link>
-            </nav>
-          </div>
-          <div className="mt-8 text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Robotnik. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
+      <Analytics />
     </div>
   )
 }
