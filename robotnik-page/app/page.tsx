@@ -72,11 +72,11 @@ export default function RobotnikLandingPage() {
             }`}>
               Linjeforeningen for anvendt robotikk ved NMBU
             </p>
-            <Link href="/kontaktside">
+            <Link href="/ny-student">
               <Button size="lg" className={`bg-[#9597ad] hover:bg-[#367d70] text-white transition-all duration-300 delay-100 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
-                Involver deg <ChevronRight className="ml-2" />
+                Ny student? <ChevronRight className="ml-2" />
               </Button>
             </Link>
           </div>
