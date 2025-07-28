@@ -15,9 +15,11 @@ import { Card } from "@/components/ui/testcard"
 import { Spotlight } from "@/components/ui/spotlight"
 
 // FAQ Item Component
+import { ReactNode } from "react";
+
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 const FAQItem = ({ question, answer }: FAQItemProps) => {
@@ -94,7 +96,7 @@ export default function RobotnikLandingPage() {
               priority
             />
             {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/60"></div>
           </div>
           
           {/* Content */}
@@ -112,7 +114,7 @@ export default function RobotnikLandingPage() {
             <p className={`text-lg md:text-xl max-w-3xl mx-auto text-gray-200 transition-all duration-1000 delay-500 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              Er du ny student ved Anvendt Robotikk på NMBU? Gratulerer med studieplassen! Vi i Robotnik ønsker deg hjertelig velkommen til et spennende og lærerikt studieløp. På denne siden finner du nyttig informasjon om både fadderuka, linjeforeningen vår og litt om livet på NMBU.
+              Gratulerer med studieplassen! Vi i Robotnik ønsker deg hjertelig velkommen til et spennende og lærerikt studieløp. På denne siden finner du nyttig informasjon om både fadderuka, linjeforeningen vår og litt om livet på NMBU.
             </p>
           </div>
         </section>
@@ -134,13 +136,24 @@ export default function RobotnikLandingPage() {
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Hva er Robotnik?</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Robotnik er linjeforeningen for alle studenter ved Anvendt Robotikk. Vi jobber for å skape et inkluderende og sosialt miljø, og arrangerer faglige og sosiale aktiviteter gjennom hele året. Som medlem får du muligheten til å bli kjent med medstudenter på tvers av kull, delta på bedriftspresentasjoner, workshops, spillkvelder og mye mer. I tillegg er vi et bindeledd mellom studentene og fagmiljøet, og kan hjelpe deg med det meste – enten det gjelder studier, trivsel eller praktiske spørsmål.
+                  Robotnik er linjeforeningen for alle studenter ved Anvendt Robotikk. Vi jobber for å skape et inkluderende og sosialt miljø, og arrangerer faglige og sosiale aktiviteter gjennom hele året. Som medlem får du muligheten til å bli kjent med medstudenter på tvers av kull, delta på bedriftspresentasjoner, workshops, hytteturer og mye mer. I tillegg er vi et bindeledd mellom studentene og fagmiljøet, og kan hjelpe deg med det meste - enten det gjelder studier, trivsel eller praktiske spørsmål.
 
                 </p>
               </div>
             </div>
 
-            {/* Second section: Fadderuka */}
+            {/* Third section: About the Program */}
+            <div className="max-w-4xl mx-auto mb-20 text-center">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Hva er Anvendt Robotikk?</h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Anvendt Robotikk er et tverrfaglig studieprogram som kombinerer teknologi, innovasjon og praktisk anvendelse. Som student lærer du å designe, bygge og programmere roboter for å løse virkelige utfordringer innen landbruk, industri, helse og miljø.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Studiet dekker alt fra maskinlæring og kunstig intelligens til mekanikk og elektronikk. Du får erfaring med industriroboter, autonome kjøretøy, droner og spesialiserte roboter som Thorvald - en av NMBUs egne landbruksroboter. Gjennom praktiske prosjekter og samarbeid med næringslivet forbereder vi deg på en karriere i robotikkens fremtid.
+              </p>
+            </div>
+
+            {/* Fourth section: Fadderuka */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Fadderuka - Din start på studietiden</h2>
@@ -149,7 +162,7 @@ export default function RobotnikLandingPage() {
               </div>
               <div>
                 <Image
-                  src="/images/robot-student-2.png"
+                  src="/tourdekringla.jpg"
                   alt="Robot resources illustration"
                   width={600}
                   height={400}
@@ -159,6 +172,8 @@ export default function RobotnikLandingPage() {
             </div>
           </div>
         </section>
+
+        
 
         {/* FAQ Section */}
         <section className="py-20 bg-gray-50">
@@ -170,28 +185,40 @@ export default function RobotnikLandingPage() {
             
             <div className="max-w-3xl mx-auto space-y-4">
               <FAQItem 
-                question="Når starter fadderuka og hvor lenge varer den?"
-                answer="Fadderuka starter vanligvis 2-3 uker før semesterstart og varer i 17 dager. Du vil få detaljert informasjon om datoer og program nærmere oppstart."
+              question="Når starter fadderuka og hvor lenge varer den?"
+              answer="I år varer fadderuka fra 8 - 24 august. Du vil få detaljert informasjon om datoer og program nærmere oppstart fra fadderen din."
               />
               <FAQItem 
-                question="Hvor mye koster det å delta i fadderuka?"
-                answer="Prisen for fadderuka varierer fra år til år, men ligger vanligvis rundt 1000-1500 kr. Dette dekker de fleste aktiviteter, mat og goder du får i løpet av de 17 dagene."
+              question="Har jeg skole i fadderuka?"
+              answer={
+                <>
+                Ja, fadderuka er lagt opp slik at du får en myk start på studiene. I august har du faget{" "}
+                <Link href="https://www.nmbu.no/emne/imrt100" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                  IMRT100
+                </Link>
+                , hvor dere i grupper skal utvikle en selvkjørende robot. Finnes det en bedre måte å starte studiene på?
+                </>
+              }
               />
               <FAQItem 
-                question="Må jeg være medlem i Robotnik for å delta i aktiviteter?"
-                answer="Nei, du trenger ikke være medlem for å delta i fadderuka eller de fleste arrangementer. Medlemskap gir deg likevel rabatter på arrangementer og tilgang til eksklusive aktiviteter."
+              question="Hvor mye koster det å delta i fadderuka?"
+              answer="Det er gratis å delta i fadderuka, og de aller fleste arrangementer er gratis for alle studenter. Noen spesielle arrangementer, som konserter på Samfunnet, vil koste penger."
               />
               <FAQItem 
-                question="Hvor finner jeg bøker og utstyr til studiet?"
-                answer="Du kan kjøpe bøker på NMBU sin bokhandel eller brukt gjennom Facebook-grupper. Spesialutstyr til robotikk vil bli presentert på studiestarten. Robotnik har også et utlånssystem for noe utstyr."
+              question="Hvordan blir jeg medlem i Robotnik?"
+              answer="Alle studenter på Anvendt Robotikk er automatisk medlemmer av Robotnik. Medlemskap gir deg tilgang til eksklusive aktiviteter resten av studietiden, samt stemmerett på årsmøter."
               />
               <FAQItem 
-                question="Hvordan kommer jeg i kontakt med andre studenter?"
-                answer="Gjennom fadderuka vil du bli med i en faddergruppe og få kontakt med både faddere og medstudenter. Vi har også Facebook-grupper og Discord-server hvor du kan chatte med andre studenter."
+              question="Hvor finner jeg bøker og utstyr til studiet?"
+              answer="Du kan kjøpe bøker på NMBU sin bokhandel eller brukt gjennom Facebook-grupper. Hør med faddere eller eldre studenter for tips, kanskje har de boka du trenger."
               />
               <FAQItem 
-                question="Hvor kan jeg bo som student på NMBU?"
-                answer="NMBU tilbyr studentboliger gjennom SiT (Studentsamskipnaden). Du kan søke om plass på studentsamskipnaden.no. Det finnes også private utleiealternativer i Ås-området."
+              question="Hvordan kommer jeg i kontakt med andre studenter?"
+              answer="Gjennom fadderuka vil du bli med i en faddergruppe og få kontakt med både faddere og medstudenter. Vi har også en Facebook-gruppe for alle Robotnik-medlemmer."
+              />
+              <FAQItem 
+              question="Hvor kan jeg bo som student på NMBU?"
+              answer="NMBU tilbyr studentboliger gjennom SiÅs (Studentsamskipnaden). Du kan søke om plass på sias.no. Det finnes også private utleiealternativer i Ås-området."
               />
             </div>
           </div>
