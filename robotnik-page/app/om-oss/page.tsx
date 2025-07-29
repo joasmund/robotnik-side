@@ -149,8 +149,8 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <Image
-                  src="/Thorvald.png"
-                  alt="Thorvald robot"
+                  src="/formler.jpg"
+                  alt="Studenter med tavle. Foto: Tommy Normann-NMBU"
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
@@ -229,15 +229,15 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto space-y-4">
               <FAQItem 
                 question="Hvem kan bli medlem i Robotnik?"
-                answer="Alle studenter ved Anvendt Robotikk er automatisk medlemmer av Robotnik. Vi ønsker også andre interesserte studenter velkommen til våre åpne arrangementer."
+                answer="Alle studenter ved Anvendt Robotikk er automatisk medlemmer av Robotnik. Har du gjennomført internt bytte til robotikk, eller søkt deg inn på høyere årstrinn? Ta kontakt så hjelper vi deg."
               />
               <FAQItem 
                 question="Hvor ofte arrangerer dere aktiviteter?"
-                answer="Vi har noe på gang nesten hver uke! Fra ukentlige sosiale sammenkomster til månedlige workshops og større arrangementer som hytteturer og bedriftspresentasjoner."
+                answer="Vi har noe på gang gjennom hele semesteret! Alt fra lavterskel-kvelder og sosiale sammenkomster til større arrangementer som hytteturer og bedriftspresentasjoner. Den årlige quicupen er også et høydepunkt!"
               />
               <FAQItem 
                 question="Kan jeg bidra til Robotnik uten å være i styret?"
-                answer="Absolutt! Vi har flere komiteer og arbeidsgrupper som alltid trenger frivillige. Dette er en flott måte å engasjere seg på og bidra til fellesskapet."
+                answer="Absolutt! Har du en ide til et arrangement eller vil du holde en workshop? Ta kontakt med oss, så finner vi ut av det sammen."
               />
               <FAQItem 
                 question="Hva slags arrangementer arrangerer dere?"

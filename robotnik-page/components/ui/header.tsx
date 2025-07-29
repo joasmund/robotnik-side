@@ -37,10 +37,10 @@ const Header = ({ isScrolled }: HeaderProps) =>
                         </div>
                     </div>
                 </div>
-                <Button variant="ghost"><Link href="/arrangementside">Arrangementer</Link></Button>
-                <Button variant="ghost"><Link href="/prosjektside">Prosjekter</Link></Button>
-                <Button variant="ghost"><Link href="/bloggside">Blogg</Link></Button>
-                <Button variant="ghost"><Link href="/kontaktside">Kontakt</Link></Button>
+                <Button variant="ghost"><Link href="/arrangementer">Arrangementer</Link></Button>
+                <Button variant="ghost"><Link href="/prosjekter">Prosjekter</Link></Button>
+                <Button variant="ghost"><Link href="/blogg">Blogg</Link></Button>
+                <Button variant="ghost"><Link href="/kontakt">Kontakt</Link></Button>
             </nav>
         </div>
     </header>
