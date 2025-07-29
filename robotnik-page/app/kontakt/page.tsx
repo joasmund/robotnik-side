@@ -78,11 +78,11 @@ export default function ContactPage() {
         {/* Contact Form Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-gray-900 text-center">Ta kontakt</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
               {/* Contact Button */}
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">Send oss en melding</h2>
-                <div className="bg-gray-50 rounded-lg p-8 text-center">
+              <div className="flex">
+                <div className="bg-gray-50 rounded-lg p-8 text-center flex-1 flex flex-col justify-center">
                   <Mail className="w-16 h-16 mx-auto mb-6 text-blue-600" />
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">Kontakt oss direkte</h3>
                   <p className="text-gray-700 mb-6">
@@ -90,48 +90,45 @@ export default function ContactPage() {
                   </p>
                   <a
                     href="mailto:styret@robotnik.no?subject=Henvendelse fra nettsiden&body=Hei Robotnik,%0D%0A%0D%0AJeg vil gjerne..."
-                    className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                    className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors text-sm w-fit mx-auto"
                   >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Send e-post til styret
+                    <span className="flex items-center">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send e-post til styret
+                    </span>
                   </a>
                 </div>
               </div>
 
-              {/* Contact Information */}
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">Kontaktinformasjon</h2>
-                <div className="space-y-8">
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-4 text-gray-900">Generell kontakt</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center">
-                        <Mail className="w-6 h-6 mr-4 text-blue-600" />
-                        <span className="text-gray-700">styret@robotnik.no</span>
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="w-6 h-6 mr-4 text-blue-600" />
-                        <span className="text-gray-700">Drøbakveien 31, 1433 Ås</span>
-                      </div>
+              {/* Contact Information Blocks */}
+              <div className="grid grid-rows-2 gap-8">
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Generell kontakt</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <Mail className="w-6 h-6 mr-4 text-blue-600" />
+                      <span className="text-gray-700">robotnik@nmbu.no</span>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="w-6 h-6 mr-4 text-blue-600" />
+                      <span className="text-gray-700">Drøbakveien 31, 1433 Ås</span>
                     </div>
                   </div>
+                </div>
 
-                  
-
-                  <div className="bg-blue-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-900">Følg oss</h3>
-                    <p className="text-gray-700 mb-4">Hold deg oppdatert på våre aktiviteter og arrangementer</p>
-                    <div className="flex space-x-4">
-                      <a href="https://www.facebook.com/robotniknmbu" className="text-blue-600 hover:text-blue-800 transition-colors">
-                        Facebook
-                      </a>
-                      <a href="https://www.instagram.com/robotniknmbu" className="text-blue-600 hover:text-blue-800 transition-colors">
-                        Instagram
-                      </a>
-                      <a href="https://www.linkedin.com/company/robotnik-nmbu/" className="text-blue-600 hover:text-blue-800 transition-colors">
-                        LinkedIn
-                      </a>
-                    </div>
+                <div className="bg-blue-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Følg oss</h3>
+                  <p className="text-gray-700 mb-4">Hold deg oppdatert på våre aktiviteter og arrangementer</p>
+                  <div className="flex space-x-4">
+                    <a href="https://www.facebook.com/robotniknmbu" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      Facebook
+                    </a>
+                    <a href="https://www.instagram.com/robotniknmbu" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/company/robotnik-nmbu/" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      LinkedIn
+                    </a>
                   </div>
                 </div>
               </div>
@@ -151,7 +148,8 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Adresse</h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Drøbakveien 31, 1433 Ås<br />
+                  Postadresse: Drøbakveien 31, 1433 Ås<br />
+                  Robotlaben: Kajaveien 4, 1433 Ås<br />
                   Fakultet for realfag og teknologi<br />
                   NMBU - Norges miljø- og biovitenskapelige universitet<br />
                   {/* Postboks 5003 NMBU<br /> */}
@@ -185,7 +183,7 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 text-gray-900">Ofte stilte spørsmål</h2>
@@ -215,7 +213,7 @@ export default function ContactPage() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />
