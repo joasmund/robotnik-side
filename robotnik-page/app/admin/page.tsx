@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
-import { Calendar, MapPin, Users, DollarSign, Tag, User } from "lucide-react";
+import { Calendar, MapPin, DollarSign, Tag, User } from "lucide-react";
 
 interface EventFormData {
   title: string;
@@ -17,8 +17,6 @@ interface EventFormData {
   category: string;
   price: number;
   image: string;
-  attendees: number;
-  maxAttendees: number;
   organizer: string;
   content: string;
 }
@@ -32,8 +30,6 @@ const initialFormData: EventFormData = {
   category: 'Workshop',
   price: 0,
   image: '/campus.jpg',
-  attendees: 0,
-  maxAttendees: 50,
   organizer: 'Robotnik',
   content: ''
 };
@@ -69,8 +65,6 @@ location: "${formData.location}"
 category: "${formData.category}"
 price: ${formData.price}
 image: "${formData.image}"
-attendees: ${formData.attendees}
-maxAttendees: ${formData.maxAttendees}
 organizer: "${formData.organizer}"
 ---
 
@@ -260,36 +254,6 @@ Vi gleder oss til å se deg!`}`;
                     min="0"
                     placeholder="0"
                   />
-                </div>
-
-                {/* Attendees */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <Users className="w-4 h-4 inline mr-1" />
-                      Maks deltakere
-                    </label>
-                    <Input
-                      type="number"
-                      name="maxAttendees"
-                      value={formData.maxAttendees}
-                      onChange={handleInputChange}
-                      min="1"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Påmeldte
-                    </label>
-                    <Input
-                      type="number"
-                      name="attendees"
-                      value={formData.attendees}
-                      onChange={handleInputChange}
-                      min="0"
-                    />
-                  </div>
                 </div>
 
                 {/* Organizer */}
