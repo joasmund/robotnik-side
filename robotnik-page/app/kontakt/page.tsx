@@ -156,17 +156,11 @@ export default function ContactPage() {
                 </p>
                 
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Hvordan komme seg hit</h3>
-                <div className="space-y-3">
-                  <p className="text-gray-700">
-                    <span className="font-medium">Med tog:</span> Ås stasjon (ca. 10 min gange)
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-medium">Med bil:</span> Parkering tilgjengelig på campus
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-medium">Med buss:</span> Universitetet i Ås er nærmeste busstopp
-                  </p>
-                </div>
+                <p className="text-lg text-gray-700">
+                  <span className="font-medium">Med tog:</span> Ås stasjon (ca. 10 min gange fra stasjonen)<br />
+                  <span className="font-medium">Med bil:</span> Parkering tilgjengelig på campus<br />
+                  <span className="font-medium">Med buss:</span> Universitetet i Ås er nærmeste busstopp<br />
+                </p>
               </div>
               
               <div>

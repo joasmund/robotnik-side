@@ -234,14 +234,15 @@ export default function StyretPage() {
                 </p>
                 <div className="space-y-3">
                   <p className="text-gray-700">
-                    <span className="font-medium">Generell henvendelse:</span> styret@robotnik.no
+                    <span className="font-medium">Generell henvendelse:</span> robotnik@nmbu.no
                   </p>
-                  <p className="text-gray-700">
-                    <span className="font-medium">Styremøter:</span> Hver tirsdag kl. 16:00 i robotikklaben
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-medium">Kontor:</span> Robotikklaben, Campus Ås
-                  </p>
+                </div>
+                <div className="mt-8">
+                  <Link href="/kontakt">
+                    <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                      Gå til kontaktside
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div>
