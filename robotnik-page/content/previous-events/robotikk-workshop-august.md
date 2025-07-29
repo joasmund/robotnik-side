@@ -9,8 +9,6 @@ location: "Robotikklaben, NMBU"
 category: "Workshop"
 price: 0
 image: "/campus.jpg"
-attendees: 25
-maxAttendees: 30
 organizer: "Robotnik"
 registrationDeadline: "2025-08-13"
 featured: true

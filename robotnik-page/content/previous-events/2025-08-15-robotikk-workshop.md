@@ -5,8 +5,6 @@ time: "14:00"
 location: "Robotikklaben, NMBU"
 category: "Workshop"
 price: 0
-maxAttendees: 30
-currentAttendees: 25
 image: "/campus.jpg"
 organizer: "Robotnik"
 published: true

@@ -14,8 +14,6 @@ export interface Event {
   category: string;
   price: number;
   image: string;
-  attendees: number;
-  maxAttendees: number;
   organizer: string;
   content?: string;
 }

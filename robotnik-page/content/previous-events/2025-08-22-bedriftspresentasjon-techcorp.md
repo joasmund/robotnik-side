@@ -5,8 +5,6 @@ time: "16:00"
 location: "Auditorium A, NMBU"
 category: "Bedrift"
 price: 0
-maxAttendees: 80
-currentAttendees: 45
 image: "/campus.jpg"
 organizer: "Robotnik"
 published: true

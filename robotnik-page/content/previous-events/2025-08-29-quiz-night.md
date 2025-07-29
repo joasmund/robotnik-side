@@ -5,8 +5,6 @@ time: "19:00"
 location: "Studentkafeen, NMBU"
 category: "Sosial"
 price: 50
-maxAttendees: 80
-currentAttendees: 60
 image: "/campus.jpg"
 organizer: "Robotnik"
 published: true
