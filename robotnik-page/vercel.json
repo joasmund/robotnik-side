@@ -5,11 +5,6 @@
       "NODE_ENV": "production"
     }
   },
-  "functions": {
-    "app/**/*.{js,ts,tsx}": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
