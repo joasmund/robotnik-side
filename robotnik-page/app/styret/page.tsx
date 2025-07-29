@@ -105,7 +105,7 @@ export default function StyretPage() {
   }, [lastScrollY]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-200">
       <header className={`fixed w-full z-50 transition-transform duration-300 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}>
@@ -184,15 +184,16 @@ export default function StyretPage() {
             
             {/* Second row - 3 members */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
-              <BoardMember
-                name="Ludvik Høibjerg-Aslaksen"
-                position="Nestleder/Økonomiansvarlig"
-                description="Jeg bistår lederen og holder styr på økonomien, slik at vi kan gjennomføre flest mulig arrangementer."
-              />
+              
               <BoardMember
                 name="Kristiane Westersjø"
                 position="Næringslivsansvarlig"
                 description="Jeg jobber med å bygge relasjoner til næringslivet og skaffe sponsorer, slik at vi kan tilby spennende aktiviteter og arrangementer for studentene."
+              />
+              <BoardMember
+                name="Ludvik Høibjerg-Aslaksen"
+                position="Nestleder/Økonomiansvarlig"
+                description="Jeg bistår lederen og holder styr på økonomien, slik at vi kan gjennomføre flest mulig arrangementer."
               />
               <BoardMember
                 name="Georg Dahl-Steinsvik"

@@ -35,7 +35,7 @@ export default function ProjectPage() {
 
 
     return (
-        <div className="min-h-screen bg-gray-900 text-gray-100">
+        <div className="min-h-screen bg-gray-900 text-gray-200">
             <header className={`fixed w-full z-50 transition-transform duration-300 ${
             showHeader ? 'translate-y-0' : '-translate-y-full'
             }`}>

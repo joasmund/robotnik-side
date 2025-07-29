@@ -74,7 +74,7 @@ export default function RobotnikLandingPage() {
   }, [lastScrollY]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-200">
       <header className={`fixed w-full z-50 transition-transform duration-300 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}>
