@@ -126,7 +126,7 @@ export default function AboutPage() {
             {/* What We Do Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">Hva gjør vi?</h2>
+                <h2 className="text-3xl font-bold mb-6 text-gray-900">Hva vi gjør</h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
                   Robotnik arrangerer workshops, foredrag og hackathons for å gi studentene muligheten til å lære mer om robotikk og teknologi. Vi jobber tett med våre partnere i næringslivet for å gi studentene tilgang til spennende prosjekter og karrieremuligheter.
                 </p>
@@ -136,7 +136,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <Image
-                  src="/Robotniklogo.png"
+                  src="/Robotnikwide.png"
                   alt="Robotnik logo"
                   width={600}
                   height={400}
@@ -159,7 +159,7 @@ export default function AboutPage() {
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Våre studenter</h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                  Studentene ved Anvendt Robotikk velger spesialiseringsretning i 3. året, med fokus på enten design eller programmering. Dette gir oss en bred faglig kompetanse innen robotikk og teknologi.
+                  Studentene ved Anvendt Robotikk velger spesialiseringsretning på 3. året, med fokus på enten <strong>robotdesign</strong> eller <strong>robotprogrammering og maskinlæring</strong>. Dette gir oss en bred faglig kompetanse innen robotikk og teknologi.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Våre ferdigutdannede studenter har gått videre til spennende karrierer innen robotikk, AI, automatisering og teknologi - både i Norge og internasjonalt.
@@ -204,7 +204,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-white">
+       {/*  <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Bli med i Robotnik-familien!</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-700">
@@ -216,14 +216,13 @@ export default function AboutPage() {
               </Button>
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* FAQ Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 text-gray-900">Ofte stilte spørsmål</h2>
-              <p className="text-lg text-gray-600">Her finner du svar på vanlige spørsmål om Robotnik</p>
             </div>
             
             <div className="max-w-3xl mx-auto space-y-4">
@@ -237,11 +236,11 @@ export default function AboutPage() {
               />
               <FAQItem 
                 question="Kan jeg bidra til Robotnik uten å være i styret?"
-                answer="Absolutt! Har du en ide til et arrangement eller vil du holde en workshop? Ta kontakt med oss, så finner vi ut av det sammen."
+                answer="Absolutt! Har du en idé til et arrangement eller vil du holde en workshop? Ta kontakt med oss, så finner vi ut av det sammen."
               />
               <FAQItem 
                 question="Hva slags arrangementer arrangerer dere?"
-                answer="Vi arrangerer alt fra tekniske workshops og hackathons til sosiale arrangementer som fester, spillkvelder og hytteturer. Vi har også bedriftspresentasjoner og karrieredager."
+                answer="Vi arrangerer alt fra bedriftsbesøk og bedriftspresentasjoner til sosiale arrangementer som julebord, vors, spillkvelder og hytteturer. Vi har også arrangementer med andre linjeforeninger."
               />
               <FAQItem 
                 question="Hvordan holder jeg meg oppdatert på aktiviteter?"
