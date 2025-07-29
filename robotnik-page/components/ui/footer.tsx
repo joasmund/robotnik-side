@@ -12,10 +12,10 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold mb-4 text-gray-900">Quick Links</h4> {/* Changed text color to text-gray-900 */}
           <ul className="space-y-2">
-            <li><Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">About Us</Link></li>
-            <li><Link href="/events" className="text-sm text-gray-600 hover:text-primary transition-colors">Events</Link></li>
-            <li><Link href="/projects" className="text-sm text-gray-600 hover:text-primary transition-colors">Projects</Link></li>
-            <li><Link href="/contact" className="text-sm text-gray-600 hover:text-primary transition-colors">Contact</Link></li>
+            <li><Link href="/om-oss" className="text-sm text-gray-600 hover:text-primary transition-colors">Om Robotnik</Link></li>
+            <li><Link href="/ny-student" className="text-sm text-gray-600 hover:text-primary transition-colors">Ny student</Link></li>
+            <li><Link href="/utstyr" className="text-sm text-gray-600 hover:text-primary transition-colors">Utstyr</Link></li>
+            <li><Link href="/kontakt" className="text-sm text-gray-600 hover:text-primary transition-colors">Kontakt</Link></li>
           </ul>
         </div>
         <div>
@@ -33,16 +33,20 @@ const Footer = () => (
               <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link href="https://www.github.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
+            {/* <Link href="https://www.github.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/github.svg" alt="GitHub" width={20} height={20} />
               <span className="sr-only">GitHub</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div>
-          <Image src="/Thorvald.png" alt="Thorvald logo" width={200} height={120} />
+          <Link href="https://sagarobotics.com/" className="block hover:opacity-80 transition-opacity">
+            <Image src="/Thorvald.png" alt="Thorvald logo" width={200} height={120} />
+          </Link>
           <Separator className="my-8" />
-          <Image src="/Kameleon.png" alt="kameleon logo" width={200} height={120} />
+          <Link href="https://www.kameleongruppen.no/" className="block hover:opacity-80 transition-opacity">
+            <Image src="/Kameleon.png" alt="kameleon logo" width={200} height={120} />
+          </Link>
   
           
         </div>

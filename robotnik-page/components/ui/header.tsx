@@ -22,8 +22,8 @@ const Header = ({ isScrolled }: HeaderProps) =>
                     </Button>
                     <div className="absolute left-0 top-full pt-2 w-40 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-50">
                         <div className="bg-white rounded shadow-lg">
-                            <Link href="/omside" className="block px-4 py-2 text-gray-900 hover:bg-gray-100/70">
-                                Om oss
+                            <Link href="/om-oss" className="block px-4 py-2 text-gray-900 hover:bg-gray-100/70">
+                                Om Robotnik
                             </Link>
                             <Link href="/ny-student" className="block px-4 py-2 text-gray-900 hover:bg-gray-100/70">
                                 Ny student
