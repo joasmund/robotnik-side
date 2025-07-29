@@ -6,13 +6,8 @@ import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getUpcomingEvents } from "@/utils/eventUtils";
-import { ChevronRight, ChevronDown } from "lucide-react";
-import { EventCard } from "@/components/ui/EventCard";  
+import { ChevronDown } from "lucide-react";
 import { Analytics } from "@vercel/analytics/next";
-import { SplineScene } from "@/components/ui/splite";
-import { Card } from "@/components/ui/testcard"
-import { Spotlight } from "@/components/ui/spotlight"
 
 // FAQ Item Component
 interface FAQItemProps {
@@ -79,7 +74,6 @@ const BoardMember = ({ name, position, image, description }: BoardMemberProps) =
 };
 
 export default function StyretPage() {
-  const upcomingEvents = getUpcomingEvents(3);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

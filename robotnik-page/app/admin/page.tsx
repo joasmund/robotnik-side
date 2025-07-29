@@ -346,7 +346,7 @@ Vi gleder oss til å se deg!`}`;
                 </div>
               ) : (
                 <div className="text-center text-gray-500 py-8">
-                  <p>Fyll ut skjemaet og klikk "Generer Markdown" for å se den genererte filen.</p>
+                  <p>Fyll ut skjemaet og klikk &ldquo;Generer Markdown&rdquo; for å se den genererte filen.</p>
                 </div>
               )}
             </div>

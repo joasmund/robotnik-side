@@ -6,18 +6,12 @@ import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getUpcomingEvents } from "@/utils/eventUtils";
 import { ChevronRight } from "lucide-react";
-import { EventCard } from "@/components/ui/EventCard";  
 import { Analytics } from "@vercel/analytics/next";
-import { SplineScene } from "@/components/ui/splite";
-import { Card } from "@/components/ui/testcard"
-import { Spotlight } from "@/components/ui/spotlight"
 
 
 
 export default function RobotnikLandingPage() {
-  const upcomingEvents = getUpcomingEvents(3);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

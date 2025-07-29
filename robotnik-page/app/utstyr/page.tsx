@@ -1,18 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getUpcomingEvents } from "@/utils/eventUtils";
-import { ChevronRight, ChevronDown } from "lucide-react";
-import { EventCard } from "@/components/ui/EventCard";  
+import { ChevronDown } from "lucide-react";
 import { Analytics } from "@vercel/analytics/next";
-import { SplineScene } from "@/components/ui/splite";
-import { Card } from "@/components/ui/testcard"
-import { Spotlight } from "@/components/ui/spotlight"
 
 // FAQ Item Component
 interface FAQItemProps {
@@ -48,7 +41,6 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
 
 export default function RobotnikLandingPage() {
-  const upcomingEvents = getUpcomingEvents(3);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -107,7 +99,7 @@ export default function RobotnikLandingPage() {
             <p className={`text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed text-white transition-all duration-1000 delay-300 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              Laben "vår" på campus.
+              Laben &ldquo;vår&rdquo; på campus.
             </p>
             <p className={`text-lg md:text-xl max-w-3xl mx-auto text-gray-200 transition-all duration-1000 delay-500 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
