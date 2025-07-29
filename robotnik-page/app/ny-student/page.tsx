@@ -149,7 +149,7 @@ export default function RobotnikLandingPage() {
                 Anvendt Robotikk er et tverrfaglig studieprogram som kombinerer teknologi, innovasjon og praktisk anvendelse. Som student lærer du å designe, bygge og programmere roboter for å løse virkelige utfordringer innen landbruk, industri, helse og miljø.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Studiet dekker alt fra maskinlæring og kunstig intelligens til mekanikk og elektronikk. Du får erfaring med industriroboter, autonome kjøretøy, droner og spesialiserte roboter som Thorvald - en av NMBUs egne landbruksroboter. Gjennom praktiske prosjekter og samarbeid med næringslivet forbereder vi deg på en karriere i robotikkens fremtid.
+                Studiet dekker alt fra maskinlæring og kunstig intelligens til mekanikk og elektronikk. Du får erfaring med industriroboter, autonome kjøretøy, droner og spesialiserte roboter som Thorvald - NMBUs egne landbruksrobot. Gjennom praktiske prosjekter og samarbeid med næringslivet forbereder vi deg på en karriere i robotikkens fremtid.
               </p>
             </div>
 
