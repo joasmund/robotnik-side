@@ -76,7 +76,7 @@ export default function RobotnikLandingPage() {
   }, [lastScrollY]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-200">
       <header className={`fixed w-full z-50 transition-transform duration-300 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}>
@@ -219,6 +219,18 @@ export default function RobotnikLandingPage() {
               <FAQItem 
               question="Hvor kan jeg bo som student på NMBU?"
               answer="NMBU tilbyr studentboliger gjennom SiÅs (Studentsamskipnaden). Du kan søke om plass på sias.no. Det finnes også private utleiealternativer i Ås-området."
+              />
+              <FAQItem 
+              question="Hvor finner jeg robotlaben?"
+              answer={
+                <>
+                Robotlaben finnes i Kajaveien 4. Se{" "}
+                <Link href="https://link.mazemap.com/MwCcCnU7" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                  MazeMap
+                </Link>
+                {" "}for veibeskrivelse.
+                </>
+              }
               />
             </div>
           </div>
