@@ -209,7 +209,15 @@ export default function RobotnikLandingPage() {
               />
               <FAQItem 
               question="Hvor kan jeg bo som student på NMBU?"
-              answer="NMBU tilbyr studentboliger gjennom SiÅs (Studentsamskipnaden). Du kan søke om plass på sias.no. Det finnes også private utleiealternativer i Ås-området."
+              answer={
+                <>
+                NMBU tilbyr studentboliger gjennom SiÅs (Studentsamskipnaden). Du kan søke om plass på{" "}
+                <Link href="https://sias.no" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                  sias.no
+                </Link>
+                . Det finnes også private utleiealternativer i Ås-området.
+                </>
+              }
               />
               <FAQItem 
               question="Hvor finner jeg robotlaben?"
@@ -222,6 +230,10 @@ export default function RobotnikLandingPage() {
                 {" "}for veibeskrivelse.
                 </>
               }
+              />
+              <FAQItem 
+              question="Må jeg kjøpe ny pc før jeg begynner på studiene?"
+              answer="Det er ikke nødvendig å kjøpe ny pc før studiestart."
               />
             </div>
           </div>
