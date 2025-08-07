@@ -20,6 +20,9 @@ dependencies:
   '@vercel/analytics':
     specifier: ^1.5.0
     version: 1.5.0(next@15.0.2)(react@19.0.0-rc-02c0e824-20241028)
+  '@vercel/speed-insights':
+    specifier: ^1.2.0
+    version: 1.2.0(next@15.0.2)(react@19.0.0-rc-02c0e824-20241028)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.1
@@ -1352,6 +1355,34 @@ packages:
 
   /@vercel/ruby@2.1.0:
     resolution: {integrity: sha512-UZYwlSEEfVnfzTmgkD+kxex9/gkZGt7unOWNyWFN7V/ZnZSsGBUgv6hXLnwejdRi3EztgRQEBd1kUKlXdIeC0Q==}
+    dev: false
+
+  /@vercel/speed-insights@1.2.0(next@15.0.2)(react@19.0.0-rc-02c0e824-20241028):
+    resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
+    requiresBuild: true
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      next: 15.0.2(react-dom@19.0.0-rc-02c0e824-20241028)(react@19.0.0-rc-02c0e824-20241028)
+      react: 19.0.0-rc-02c0e824-20241028
     dev: false
 
   /@vercel/static-build@2.5.34:
