@@ -193,7 +193,7 @@ export default function RobotnikLandingPage() {
               />
               <FAQItem 
               question="Hvor mye koster det å delta i fadderuka?"
-              answer="Det er gratis å delta i fadderuka, og de aller fleste arrangementer er gratis for alle studenter. Noen spesielle arrangementer, som konserter på Samfunnet, vil koste penger."
+              answer="Det er gratis å delta i fadderuka, og de aller fleste arrangementer er gratis for alle studenter. Noen spesielle arrangementer, som konserter på Samfunnet, kan koste penger."
               />
               <FAQItem 
               question="Hvordan blir jeg medlem i Robotnik?"

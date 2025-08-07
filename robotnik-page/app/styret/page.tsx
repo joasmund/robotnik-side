@@ -201,7 +201,7 @@ export default function StyretPage() {
               <BoardMember
                 name="Vincent Gabriel Macedo Kollbotn"
                 position="Administrasjonsansvarlig"
-                description="Jeg vedlikeholder nettsiden, sosiale medier og teknisk utstyr. Elsker både koding og design, og sørger for at alt fungerer smidig."
+                description="Jeg vedlikeholder nettsiden, deltar på eksterne møter og holder orden på det administrative."
               />
               <BoardMember
                 name="Daniel Mortén"
@@ -211,7 +211,7 @@ export default function StyretPage() {
               <BoardMember
                 name="Mariamawit Natnael"
                 position="Linjesjef"
-                description="jeg er ansvarlig for gjennomføring av fadderuka og oppfølging av nye studenter."
+                description="Jeg er ansvarlig for gjennomføring av fadderuka og oppfølging av nye studenter. Jeg brenner for å skape et inkluderende og sosialt miljø for alle nye studenter."
               />
             </div>
           </div>
@@ -266,10 +266,6 @@ export default function StyretPage() {
                 answer="Styret velges på den årlige generalforsamlingen som holdes på våren. Alle medlemmer kan stille til valg, og vi oppfordrer alle interesserte til å melde sin interesse. Du kan også være med i komiteer og arbeidsgrupper underveis i året."
               />
               <FAQItem 
-                question="Hvor ofte møtes styret?"
-                answer="Styret har faste møter hver tirsdag kl. 16:00 i robotikklaben. Vi har også ekstraordinære møter ved behov, spesielt før store arrangementer. Møtene er åpne for alle som ønsker å komme og høre hva som skjer."
-              />
-              <FAQItem 
                 question="Hva er styrets hovedoppgaver?"
                 answer="Styret planlegger og gjennomfører arrangementer, forvalter økonomien, representerer studentene overfor instituttet, vedlikeholder tekniske systemer og jobber for å skape et godt studiemiljø for alle."
               />
@@ -278,12 +274,8 @@ export default function StyretPage() {
                 answer="Absolutt! Vi ønsker tilbakemeldinger og forslag fra alle medlemmer. Du kan komme på styremøter, sende e-post, eller ta kontakt direkte med styremedlemmer. Vi tar alle innspill på alvor."
               />
               <FAQItem 
-                question="Hvor mye tid krever det å være i styret?"
-                answer="Det varierer, men regn med 5-10 timer i uken avhengig av verv og hvor mye som skjer. Lederverv krever naturligvis mer tid, mens andre verv kan tilpasses studiebelastningen bedre."
-              />
-              <FAQItem 
                 question="Får styremedlemmer noen kompensasjon?"
-                answer="Styrearbeid er frivillig og ulønnet, men vi får verdifull erfaring med ledelse, økonomi, arrangement og samarbeid. Mange tidligere styremedlemmer sier det var en av de beste opplevelsene fra studietiden."
+                answer="Styrearbeid er frivillig og ulønnet, men vi får verdifull erfaring med ledelse, økonomi, arrangement og samarbeid, og man blir kjent med den supre gjengen på robotikk."
               />
             </div>
           </div>

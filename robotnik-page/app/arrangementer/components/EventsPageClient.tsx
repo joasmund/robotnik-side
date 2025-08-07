@@ -360,14 +360,20 @@ export function EventsPageClient({ events }: EventsPageClientProps) {
             <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-700">
               Ønsker du å arrangere noe selv eller har du forslag til arrangementer? Vi hjelper deg gjerne med å planlegge og promotere det!
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button
+              asChild
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+            >
+              <a href="/kontakt">
               Foreslå et arrangement
+              </a>
             </Button>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 text-gray-900">Ofte stilte spørsmål</h2>
@@ -397,7 +403,7 @@ export function EventsPageClient({ events }: EventsPageClientProps) {
               />
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

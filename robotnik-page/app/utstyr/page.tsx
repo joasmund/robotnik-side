@@ -134,25 +134,34 @@ export default function RobotnikLandingPage() {
             {/* Second section: Fadderuka */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">Fadderuka - Din start på studietiden</h2>
+                <h2 className="text-3xl font-bold mb-6 text-gray-900">Finn fram</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Fadderuka er 17 dager fylt med morsomme aktiviteter, sosiale sammenkomster og muligheten til å bli kjent med både medstudenter og campus. Våre engasjerte faddere står klare til å ta deg imot og sørge for at du får den best mulige starten på studietiden. Gjennom fadderuka får du innsikt i studentlivet på NMBU, informasjon om studiet og ikke minst mange nye venner.                </p>
+                  Robotlaben er lokalisert i hjertet av campus øst, bak TF-bygget. Se kartet for mer informasjon.
+                </p>
               </div>
-              <div>
-                <Image
-                  src="/images/robot-student-2.png"
-                  alt="Robot resources illustration"
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-lg w-full h-auto object-cover"
-                />
-              </div>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-lg overflow-hidden shadow-lg w-full max-w-[600px]">
+                    <iframe
+                      width="600"
+                      height="420"
+                      src="https://use.mazemap.com/embed.html#v=1&amp;campusid=241&amp;zlevel=1&amp;center=10.777668,59.665991&amp;zoom=19.9&amp;sharepoitype=poi&amp;sharepoi=699162&amp;utm_medium=iframe"
+                      style={{ borderRadius: "0.5rem" }}
+                      allow="geolocation"
+                      title="Map by MazeMap"
+                    ></iframe>
+                  </div>
+                  <small>
+                    <a href="https://www.mazemap.com/" target="_blank" rel="noopener noreferrer">
+                      Map by MazeMap
+                    </a>
+                  </small>
+                </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
+        {/* <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 text-gray-900">Ofte stilte spørsmål om robotikklaben</h2>
@@ -170,7 +179,7 @@ export default function RobotnikLandingPage() {
               />
               <FAQItem 
                 question="Hvilke roboter kan vi jobbe med i laben?"
-                answer="Vi har flere typer roboter: TurtleBots for navigasjon og SLAM, industriroboter som ABB og Universal Robots, droner for flyroboter-kurs, samt mindre roboter som Raspberry Pi og Arduino-baserte systemer. Mange av disse brukes i undervisningen og er tilgjengelige for studentprosjekter."
+                answer="Vi har flere typer roboter: TurtleBots for navigasjon og SLAM, industriroboter som ABB og Universal Robots, flere versjoner av Thorvald, samt mindre roboter som Raspberry Pi og Arduino-baserte systemer. Mange av disse brukes i undervisningen og er tilgjengelige for masteroppgaver."
               />
               <FAQItem 
                 question="Kan jeg låne komponenter til hjemmeprosjekter?"
@@ -186,7 +195,7 @@ export default function RobotnikLandingPage() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
       <Analytics />

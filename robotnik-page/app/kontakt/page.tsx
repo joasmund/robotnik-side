@@ -114,7 +114,7 @@ export default function ContactPage() {
                 <p className="text-lg text-gray-700 mb-6">
                   Postadresse: Drøbakveien 31, 1433 Ås<br />
                   Robotlaben: Kajaveien 4, 1433 Ås<br />
-                  Fakultet for realfag og teknologi<br />
+                  Fakultet for Realfag og Teknologi (REALTEK)<br />
                   NMBU - Norges miljø- og biovitenskapelige universitet<br />
                   {/* Postboks 5003 NMBU<br /> */}
                 </p>
