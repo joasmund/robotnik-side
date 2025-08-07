@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Event } from "@/utils/markdownEvents";
 
 // FAQ Item Component
-interface FAQItemProps {
+/* interface FAQItemProps {
   question: string;
   answer: string;
 }
@@ -38,7 +38,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
       )}
     </div>
   );
-};
+}; */
 
 // Event Modal Component
 interface EventModalProps {

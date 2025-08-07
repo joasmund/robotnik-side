@@ -4,16 +4,16 @@ import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
+/* import { ChevronDown } from "lucide-react"; */
 import { Analytics } from "@vercel/analytics/next";
 
 // FAQ Item Component
-interface FAQItemProps {
+/* interface FAQItemProps {
   question: string;
   answer: string;
-}
+} */
 
-const FAQItem = ({ question, answer }: FAQItemProps) => {
+/* const FAQItem = ({ question, answer }: FAQItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
       )}
     </div>
   );
-};
+}; */
 
 
 
