@@ -54,55 +54,63 @@ const Header = ({ isScrolled }: HeaderProps) => {
                             <div className="bg-white rounded shadow-lg">
                                 <Link 
                                     href="/om-oss" 
-                                    className={`block px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/om-oss') ? 'bg-blue-100 font-semibold' : ''}`}
+                                    className={`flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/om-oss') ? 'bg-blue-100 font-semibold' : ''}`}
                                 >
-                                    Om Robotnik
+                                    <span className="w-full">Om Robotnik</span>
                                 </Link>
                                 <Link 
                                     href="/ny-student" 
-                                    className={`block px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/ny-student') ? 'bg-blue-100 font-semibold' : ''}`}
+                                    className={`flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/ny-student') ? 'bg-blue-100 font-semibold' : ''}`}
                                 >
-                                    Ny student
+                                    <span className="w-full">Ny student</span>
                                 </Link>
                                 <Link 
                                     href="/utstyr" 
-                                    className={`block px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/utstyr') ? 'bg-blue-100 font-semibold' : ''}`}
+                                    className={`flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/utstyr') ? 'bg-blue-100 font-semibold' : ''}`}
                                 >
-                                    Utstyr
+                                    <span className="w-full">Utstyr</span>
                                 </Link>
                                 <Link 
                                     href="/styret" 
-                                    className={`block px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/styret') ? 'bg-blue-100 font-semibold' : ''}`}
+                                    className={`flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/styret') ? 'bg-blue-100 font-semibold' : ''}`}
                                 >
-                                    Styret
+                                    <span className="w-full">Styret</span>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <Button 
-                        variant="ghost" 
-                        className={`${isActivePath('/arrangementer') ? 'bg-blue-600/20 text-blue-300' : ''}`}
-                    >
-                        <Link href="/arrangementer">Arrangementer</Link>
-                    </Button>
-                    <Button 
-                        variant="ghost" 
-                        className={`${isActivePath('/prosjekter') ? 'bg-blue-600/20 text-blue-300' : ''}`}
-                    >
-                        <Link href="/prosjekter">Prosjekter</Link>
-                    </Button>
-                    <Button 
-                        variant="ghost" 
-                        className={`${isActivePath('/blogg') ? 'bg-blue-600/20 text-blue-300' : ''}`}
-                    >
-                        <Link href="/blogg">Blogg</Link>
-                    </Button>
-                    <Button 
-                        variant="ghost" 
-                        className={`${isActivePath('/kontakt') ? 'bg-blue-600/20 text-blue-300' : ''}`}
-                    >
-                        <Link href="/kontakt">Kontakt</Link>
-                    </Button>
+                    <Link href="/arrangementer">
+                        <Button 
+                            variant="ghost" 
+                            className={`w-full ${isActivePath('/arrangementer') ? 'bg-blue-600/20 text-blue-300' : ''}`}
+                        >
+                            <span className="w-full">Arrangementer</span>
+                        </Button>
+                    </Link>
+                    <Link href="/prosjekter">
+                        <Button 
+                            variant="ghost" 
+                            className={`w-full ${isActivePath('/prosjekter') ? 'bg-blue-600/20 text-blue-300' : ''}`}
+                        >
+                            <span className="w-full">Prosjekter</span>
+                        </Button>
+                    </Link>
+                    <Link href="/blogg">
+                        <Button 
+                            variant="ghost" 
+                            className={`w-full ${isActivePath('/blogg') ? 'bg-blue-600/20 text-blue-300' : ''}`}
+                        >
+                            <span className="w-full">Blogg</span>
+                        </Button>
+                    </Link>
+                    <Link href="/kontakt">
+                        <Button 
+                            variant="ghost" 
+                            className={`w-full ${isActivePath('/kontakt') ? 'bg-blue-600/20 text-blue-300' : ''}`}
+                        >
+                            <span className="w-full">Kontakt</span>
+                        </Button>
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -137,47 +145,47 @@ const Header = ({ isScrolled }: HeaderProps) => {
                             <div className="ml-2 space-y-1">
                                 <Link 
                                     href="/om-oss" 
-                                    className={`block px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
+                                    className={`flex items-center w-full px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
                                         isActivePath('/om-oss')
                                             ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                             : 'text-gray-300 hover:text-white hover:bg-blue-600/20'
                                     }`}
                                     onClick={closeMobileMenu}
                                 >
-                                    Om Robotnik
+                                    <span className="w-full">Om Robotnik</span>
                                 </Link>
                                 <Link 
                                     href="/ny-student" 
-                                    className={`block px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
+                                    className={`flex items-center w-full px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
                                         isActivePath('/ny-student')
                                             ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                             : 'text-gray-300 hover:text-white hover:bg-blue-600/20'
                                     }`}
                                     onClick={closeMobileMenu}
                                 >
-                                    Ny student
+                                    <span className="w-full">Ny student</span>
                                 </Link>
                                 <Link 
                                     href="/utstyr" 
-                                    className={`block px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
+                                    className={`flex items-center w-full px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
                                         isActivePath('/utstyr')
                                             ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                             : 'text-gray-300 hover:text-white hover:bg-blue-600/20'
                                     }`}
                                     onClick={closeMobileMenu}
                                 >
-                                    Utstyr
+                                    <span className="w-full">Utstyr</span>
                                 </Link>
                                 <Link 
                                     href="/styret" 
-                                    className={`block px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
+                                    className={`flex items-center w-full px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
                                         isActivePath('/styret')
                                             ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                             : 'text-gray-300 hover:text-white hover:bg-blue-600/20'
                                     }`}
                                     onClick={closeMobileMenu}
                                 >
-                                    Styret
+                                    <span className="w-full">Styret</span>
                                 </Link>
                             </div>
                         </div>
@@ -186,47 +194,47 @@ const Header = ({ isScrolled }: HeaderProps) => {
                         <div className="space-y-1">
                             <Link 
                                 href="/arrangementer" 
-                                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
+                                className={`flex items-center w-full px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
                                     isActivePath('/arrangementer')
                                         ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                         : 'text-white hover:bg-blue-600/30'
                                 }`}
                                 onClick={closeMobileMenu}
                             >
-                                Arrangementer
+                                <span className="w-full">Arrangementer</span>
                             </Link>
                             <Link 
                                 href="/prosjekter" 
-                                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
+                                className={`flex items-center w-full px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
                                     isActivePath('/prosjekter')
                                         ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                         : 'text-white hover:bg-blue-600/30'
                                 }`}
                                 onClick={closeMobileMenu}
                             >
-                                Prosjekter
+                                <span className="w-full">Prosjekter</span>
                             </Link>
                             <Link 
                                 href="/blogg" 
-                                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
+                                className={`flex items-center w-full px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
                                     isActivePath('/blogg')
                                         ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                         : 'text-white hover:bg-blue-600/30'
                                 }`}
                                 onClick={closeMobileMenu}
                             >
-                                Blogg
+                                <span className="w-full">Blogg</span>
                             </Link>
                             <Link 
                                 href="/kontakt" 
-                                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
+                                className={`flex items-center w-full px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
                                     isActivePath('/kontakt')
                                         ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
                                         : 'text-white hover:bg-blue-600/30'
                                 }`}
                                 onClick={closeMobileMenu}
                             >
-                                Kontakt
+                                <span className="w-full">Kontakt</span>
                             </Link>
                         </div>
                     </div>
