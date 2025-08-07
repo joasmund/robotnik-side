@@ -43,7 +43,7 @@ export default function ProjectPage() {
             </header>
 
             <main>
-        <section className="relative h-screen flex items-start overflow-hidden">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden">
           <Image
             src="/sagaatnight.webp"
             alt="Saga Robotics at night"
@@ -53,17 +53,22 @@ export default function ProjectPage() {
             style={{ objectFit: "cover" }}
             className={`transition-transform duration-1000 ${isLoaded ? 'scale-100' : 'scale-125'}`}
           />
-          <div className="relative z-10 pl-8 pt-32 text-left mt-60 ml-60">
-            <h1 className={`text-5xl md:text-7xl font-bold mb-4 text-gray-200 transition-all duration-1000 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              Her kommer det prosjekter!
-            </h1>
-            <p className={`text-xl md:text-2xl mb-8 transition-all duration-1000 delay-300 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              Her kommer det prosjekter som Robotnik NMBU jobber med. Følg med for oppdateringer!
-            </p>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40 z-5"></div>
+          
+          <div className="relative z-10 px-4 sm:px-8 lg:px-12 text-center max-w-7xl mx-auto w-full">
+            <div className="flex flex-col items-center">
+              <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white transition-all duration-1000 leading-tight ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                Her kommer det prosjekter!
+              </h1>
+              <p className={`text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100 max-w-3xl transition-all duration-1000 delay-300 leading-relaxed ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                Her kommer det prosjekter som Robotnik NMBU jobber med. Følg med for oppdateringer!
+              </p>
+            </div>
           </div>
         </section>
       </main>
