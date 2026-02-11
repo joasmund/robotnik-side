@@ -79,9 +79,17 @@ const Header = ({ isScrolled }: HeaderProps) => {
                             </div>
                         </div>
                     </div>
+                    <Link href="/bedrift">
+                        <Button
+                            variant="ghost"
+                            className={`w-full ${isActivePath('/bedrift') ? 'bg-blue-600/20 text-blue-300' : ''}`}
+                        >
+                            <span className="w-full">For bedrifter</span>
+                        </Button>
+                    </Link>
                     <Link href="/arrangementer">
-                        <Button 
-                            variant="ghost" 
+                        <Button
+                            variant="ghost"
                             className={`w-full ${isActivePath('/arrangementer') ? 'bg-blue-600/20 text-blue-300' : ''}`}
                         >
                             <span className="w-full">Arrangementer</span>
@@ -192,7 +200,18 @@ const Header = ({ isScrolled }: HeaderProps) => {
                         
                         {/* Main navigation items */}
                         <div className="space-y-1">
-                            <Link 
+                            <Link
+                                href="/bedrift"
+                                className={`flex items-center w-full px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
+                                    isActivePath('/bedrift')
+                                        ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
+                                        : 'text-white hover:bg-blue-600/30'
+                                }`}
+                                onClick={closeMobileMenu}
+                            >
+                                <span className="w-full">For bedrifter</span>
+                            </Link>
+                            <Link
                                 href="/arrangementer" 
                                 className={`flex items-center w-full px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 touch-manipulation ${
                                     isActivePath('/arrangementer')

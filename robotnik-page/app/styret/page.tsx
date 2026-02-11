@@ -45,19 +45,18 @@ interface BoardMemberProps {
   name: string;
   position: string;
   image?: string;
-  description: string;
 }
 
-const BoardMember = ({ name, position, image, description }: BoardMemberProps) => {
+const BoardMember = ({ name, position, image }: BoardMemberProps) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-      <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full overflow-hidden">
+      <div className="w-40 h-52 mx-auto mb-4 bg-gray-200 rounded-lg overflow-hidden">
         {image ? (
           <Image
             src={image}
             alt={`${name} - ${position}`}
-            width={128}
-            height={128}
+            width={160}
+            height={208}
             className="w-full h-full object-cover"
           />
         ) : (
@@ -67,8 +66,7 @@ const BoardMember = ({ name, position, image, description }: BoardMemberProps) =
         )}
       </div>
       <h3 className="text-xl font-bold mb-2 text-gray-900">{name}</h3>
-      <p className="text-lg font-medium text-blue-600 mb-4">{position}</p>
-      <p className="text-gray-700 leading-relaxed">{description}</p>
+      <p className="text-lg font-medium text-blue-600">{position}</p>
     </div>
   );
 };
@@ -171,7 +169,7 @@ export default function StyretPage() {
                 <BoardMember
                   name="Jørgen Asmundvaag"
                   position="Leder"
-                  description="Som leder koordinerer jeg styrets arbeid og representerer Robotnik utad. Jeg brenner for å skape et inkluderende miljø hvor alle føler seg hjemme."
+                  image="/jorgen.jpg"
                 />
               </div>
             </div>
@@ -182,36 +180,35 @@ export default function StyretPage() {
               <BoardMember
                 name="Kristiane Westersjø"
                 position="Næringslivsansvarlig"
-                description="Jeg jobber med å bygge relasjoner til næringslivet og skaffe sponsorer, slik at vi kan tilby spennende aktiviteter og arrangementer for studentene."
+                image="/kristiane.jpg"
               />
               <BoardMember
-                name="Ludvik Høibjerg-Aslaksen"
+                name="Ilwaad Hasan"
                 position="Nestleder/Økonomiansvarlig"
-                description="Jeg bistår lederen og holder styr på økonomien, slik at vi kan gjennomføre flest mulig arrangementer."
+                image="/ilwaad.jpg"
               />
               <BoardMember
                 name="Georg Dahl-Steinsvik"
                 position="Arrangementsansvarlig"
-                description="Planlegger og gjennomfører sosiale arrangementer som fester, hytteturer og bedriftspresentasjoner. Målet er at alle skal ha det gøy!"
+                image="/georg.jpg"
               />
             </div>
             
             {/* Third row - 3 members */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <BoardMember
-                name="Vincent Gabriel Macedo Kollbotn"
+                name="Håkon Bekken"
                 position="Administrasjonsansvarlig"
-                description="Jeg vedlikeholder nettsiden, deltar på eksterne møter og holder orden på det administrative."
+                image="/haakon.jpg"
               />
               <BoardMember
-                name="Daniel Mortén"
+                name="Finhas Weldu"
                 position="Markedsføringsansvarlig"
-                description="Ansvarlig for kommunikasjon, sosiale medier og kontakt med andre linjeforeninger. Jeg sørger for at alle får informasjonen de trenger."
+                image="/finhas.jpg"
               />
               <BoardMember
                 name="Mariamawit Natnael"
                 position="Linjesjef"
-                description="Jeg er ansvarlig for gjennomføring av fadderuka og oppfølging av nye studenter. Jeg brenner for å skape et inkluderende og sosialt miljø for alle nye studenter."
               />
             </div>
           </div>
