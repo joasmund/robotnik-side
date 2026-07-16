@@ -2,69 +2,13 @@
 
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
+import { FAQItem } from "@/components/ui/faq-item";
+import { useScrollHeader } from "@/hooks/use-scroll-header";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
-import { Analytics } from "@vercel/analytics/next";
-import { ReactNode } from "react";
 
-interface FAQItemProps {
-  question: string;
-  answer: ReactNode;
-}
-
-const FAQItem = ({ question, answer }: FAQItemProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <button
-        className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 flex justify-between items-center"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="font-medium text-gray-900">{question}</span>
-        <ChevronDown 
-          className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-            isOpen ? 'transform rotate-180' : ''
-          }`}
-        />
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-          <p className="text-gray-700 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  );
-};
-
-
-
-export default function RobotnikLandingPage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 50);
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+export default function NewStudentPage() {
+  const { isLoaded, showHeader, isScrolled } = useScrollHeader();
 
   return (
     <div className="min-h-screen bg-white text-gray-200">
@@ -148,13 +92,20 @@ export default function RobotnikLandingPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Fadderuka - Din start på studietiden</h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Fadderuka er 17 dager fylt med morsomme aktiviteter, sosiale sammenkomster og muligheten til å bli kjent med både medstudenter og campus. Våre engasjerte faddere står klare til å ta deg imot og sørge for at du får den best mulige starten på studietiden. Gjennom fadderuka får du innsikt i studentlivet på NMBU, informasjon om studiet og ikke minst mange nye venner.                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  Fadderuka er 17 dager fylt med morsomme aktiviteter, sosiale sammenkomster og muligheten til å bli kjent med både medstudenter og campus. Våre engasjerte faddere står klare til å ta deg imot og sørge for at du får den best mulige starten på studietiden.
+                </p>
+                <Link
+                  href="/fadderuka"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                >
+                  Les mer om fadderuka
+                </Link>
               </div>
               <div>
                 <Image
                   src="/tourdekringla.jpg"
-                  alt="Robot resources illustration"
+                  alt="Fadderuka aktivitet"
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
@@ -177,7 +128,7 @@ export default function RobotnikLandingPage() {
             <div className="max-w-3xl mx-auto space-y-4">
               <FAQItem 
               question="Når starter fadderuka og hvor lenge varer den?"
-              answer="I år varer fadderuka fra 8 - 24 august. Du vil få detaljert informasjon om datoer og program nærmere oppstart fra fadderen din."
+              answer="I år varer fadderuka fra 7 - 24 august. Du vil få detaljert informasjon om datoer og program nærmere oppstart fra fadderen din."
               />
               <FAQItem 
               question="Har jeg skole i fadderuka?"
@@ -233,14 +184,35 @@ export default function RobotnikLandingPage() {
               />
               <FAQItem 
               question="Må jeg kjøpe ny pc før jeg begynner på studiene?"
-              answer="Det er ikke nødvendig å kjøpe ny pc før studiestart."
+              answer="Det er ikke nødvendig å kjøpe ny pc før studiestart. De fleste kjøper seg ny pc i løpet av førsteåret, men hva du trenger finner du ut av etter hvert."
+              />
+              <FAQItem 
+              question="Hvor finner jeg undervisningen?"
+              answer={
+                <>
+                Undervisningen foregår på NMBU-campus i Ås. Bruk{" "}
+                <Link href="https://link.mazemap.com/MwCcCnU7" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                  MazeMap
+                </Link>
+                {" "}for å finne frem til forelesningssaler og andre lokaler på campus. 
+
+                  Bruk{" "}
+                <Link href="https://cloud.timeedit.net/nmbu/web/student/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                  TimeEdit
+                </Link>
+                {" "}for å se timeplanen din.
+                </>
+              }
+              />
+              <FAQItem 
+              question="Hva bør jeg ha med meg til studiestart?"
+              answer="Ta med deg en PC med lader, notatblokk og penn. Ellers er det bare å møte opp med godt humør – fadderne og medstudentene dine sørger for at du blir tatt godt imot!"
               />
             </div>
           </div>
         </section>
       </main>
       <Footer />
-      <Analytics />
     </div>
   );
 }

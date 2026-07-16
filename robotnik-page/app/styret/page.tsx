@@ -4,41 +4,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
+import { FAQItem } from "@/components/ui/faq-item";
+import { useScrollHeader } from "@/hooks/use-scroll-header";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
-import { Analytics } from "@vercel/analytics/next";
-
-// FAQ Item Component
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
-
-const FAQItem = ({ question, answer }: FAQItemProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <button
-        className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 flex justify-between items-center"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="font-medium text-gray-900">{question}</span>
-        <ChevronDown 
-          className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-            isOpen ? 'transform rotate-180' : ''
-          }`}
-        />
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-          <p className="text-gray-700 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  );
-};
 
 // Board Member Component
 interface BoardMemberProps {
@@ -72,29 +40,7 @@ const BoardMember = ({ name, position, image }: BoardMemberProps) => {
 };
 
 export default function StyretPage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 50);
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  const { isLoaded, showHeader, isScrolled } = useScrollHeader();
 
   return (
     <div className="min-h-screen bg-white text-gray-200">
@@ -159,7 +105,7 @@ export default function StyretPage() {
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Styremedlemmer 2024/2025</h2>
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">Styremedlemmer 2025/2026</h2>
               <p className="text-lg text-gray-600">Her er våre dedikerte styremedlemmer som jobber for dere hver dag</p>
             </div>
             
@@ -188,9 +134,8 @@ export default function StyretPage() {
                 image="/ilwaad.jpg"
               />
               <BoardMember
-                name="Georg Dahl-Steinsvik"
+                name="Sondre Einvik"
                 position="Arrangementsansvarlig"
-                image="/georg.jpg"
               />
             </div>
             
@@ -207,8 +152,8 @@ export default function StyretPage() {
                 image="/finhas.jpg"
               />
               <BoardMember
-                name="Mariamawit Natnael"
-                position="Linjesjef"
+                name="Mathias Gundersen"
+                position="Faddersjef"
               />
             </div>
           </div>
@@ -279,7 +224,6 @@ export default function StyretPage() {
         </section>
       </main>
       <Footer />
-      <Analytics />
     </div>
   );
 }

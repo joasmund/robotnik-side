@@ -14,6 +14,7 @@ const Footer = () => (
           <ul className="space-y-2">
             <li><Link href="/om-oss" className="text-sm text-gray-600 hover:text-primary transition-colors">Om Robotnik</Link></li>
             <li><Link href="/ny-student" className="text-sm text-gray-600 hover:text-primary transition-colors">Ny student</Link></li>
+            <li><Link href="/fadderuka" className="text-sm text-gray-600 hover:text-primary transition-colors">Fadderuka</Link></li>
             <li><Link href="/utstyr" className="text-sm text-gray-600 hover:text-primary transition-colors">Utstyr</Link></li>
             <li><Link href="/kontakt" className="text-sm text-gray-600 hover:text-primary transition-colors">Kontakt</Link></li>
           </ul>
@@ -21,15 +22,15 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold mb-4 text-gray-900">Våre platformer</h4> {/* Changed text color to text-gray-900 */}
           <div className="flex space-x-4">
-            <Link href="https://www.facebook.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.facebook.com/robotniknmbu" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/facebook.svg" alt="Facebook" width={20} height={20} />
               <span className="sr-only">Facebook</span>
             </Link>
-            <Link href="https://www.instagram.com/robotniknmbu" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.instagram.com/robotniknmbu" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/instagram.svg" alt="Instagram" width={20} height={20} />
               <span className="sr-only">Instagram</span>
             </Link>
-            <Link href="https://www.linkedin.com/company/robotnik-nmbu/" className="text-gray-600 hover:text-primary transition-colors">
+            <Link href="https://www.linkedin.com/company/robotnik-nmbu/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
               <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} />
               <span className="sr-only">LinkedIn</span>
             </Link>
@@ -40,7 +41,7 @@ const Footer = () => (
           </div>
         </div>
         <div>
-          <Link href="https://sagarobotics.com/" className="block hover:opacity-80 transition-opacity">
+          <Link href="https://sagarobotics.com/" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
             <Image src="/Thorvald.png" alt="Thorvald logo" width={200} height={120} />
           </Link>
 

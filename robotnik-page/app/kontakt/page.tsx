@@ -3,32 +3,11 @@
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Analytics } from "@vercel/analytics/next";
 import { Mail, MapPin } from "lucide-react";
+import { useScrollHeader } from "@/hooks/use-scroll-header";
 
 export default function ContactPage() {
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    setIsScrolled(true); // Always show header in scrolled state for better visibility
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  const { showHeader, isScrolled } = useScrollHeader();
 
   return (
     <div className="min-h-screen bg-white text-gray-200">
@@ -53,7 +32,7 @@ export default function ContactPage() {
                     Send oss dine spørsmål, ideer eller bare si hei! Vi svarer så raskt vi kan.
                   </p>
                   <a
-                    href="mailto:styret@robotnik.no?subject=Henvendelse fra nettsiden&body=Hei Robotnik,%0D%0A%0D%0AJeg vil gjerne..."
+                    href="mailto:robotnik@nmbu.no?subject=Henvendelse fra nettsiden&body=Hei Robotnik,%0D%0A%0D%0AJeg vil gjerne..."
                     className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors text-sm w-fit mx-auto"
                   >
                     <span className="flex items-center">
@@ -84,13 +63,13 @@ export default function ContactPage() {
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">Følg oss</h3>
                   <p className="text-gray-700 mb-4">Hold deg oppdatert på våre aktiviteter og arrangementer</p>
                   <div className="flex space-x-4">
-                    <a href="https://www.facebook.com/robotniknmbu" className="text-blue-600 hover:text-blue-800 transition-colors">
+                    <a href="https://www.facebook.com/robotniknmbu" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">
                       Facebook
                     </a>
-                    <a href="https://www.instagram.com/robotniknmbu" className="text-blue-600 hover:text-blue-800 transition-colors">
+                    <a href="https://www.instagram.com/robotniknmbu" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">
                       Instagram
                     </a>
-                    <a href="https://www.linkedin.com/company/robotnik-nmbu/" className="text-blue-600 hover:text-blue-800 transition-colors">
+                    <a href="https://www.linkedin.com/company/robotnik-nmbu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">
                       LinkedIn
                     </a>
                   </div>
@@ -114,9 +93,8 @@ export default function ContactPage() {
                 <p className="text-lg text-gray-700 mb-6">
                   Postadresse: Drøbakveien 31, 1433 Ås<br />
                   Robotlaben: Kajaveien 4, 1433 Ås<br />
-                  Fakultet for Realfag og Teknologi (REALTEK)<br />
-                  NMBU - Norges miljø- og biovitenskapelige universitet<br />
-                  {/* Postboks 5003 NMBU<br /> */}
+                    Fakultet for Realfag og Teknologi (REALTEK)<br />
+                    NMBU - Norges miljø- og biovitenskapelige universitet<br />
                 </p>
                 
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Hvordan komme seg hit</h3>
@@ -140,42 +118,9 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        {/* <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Ofte stilte spørsmål</h2>
-              <p className="text-lg text-gray-600">Her finner du svar på de vanligste spørsmålene</p>
-            </div>
-            
-            <div className="max-w-3xl mx-auto space-y-4">
-              <FAQItem 
-                question="Når kan jeg komme innom kontoret?"
-                answer="Du kan komme innom robotikklaben på dagtid når det er aktivitet. Styremøtene våre er hver tirsdag kl. 16:00 og er åpne for alle som ønsker å komme."
-              />
-              <FAQItem 
-                question="Hvor raskt får jeg svar på henvendelser?"
-                answer="Vi prøver å svare på alle henvendelser innen 1-2 virkedager. I travle perioder kan det ta litt lengre tid, men vi kommer alltid tilbake til deg."
-              />
-              <FAQItem 
-                question="Kan jeg besøke dere uten å være student ved Anvendt Robotikk?"
-                answer="Selvfølgelig! Vi ønsker alle interesserte velkommen til våre åpne arrangementer. Ta kontakt med oss på forhånd så kan vi fortelle deg mer om hva som skjer."
-              />
-              <FAQItem 
-                question="Hvordan kan jeg bli med i Robotnik?"
-                answer="Alle studenter ved Anvendt Robotikk er automatisk medlemmer. Hvis du studerer noe annet men er interessert i robotikk, kan du delta på våre åpne arrangementer og bli med i aktiviteter."
-              />
-              <FAQItem 
-                question="Arrangerer dere bedriftspresentasjoner?"
-                answer="Ja! Vi arrangerer jevnlig bedriftspresentasjoner og karrieredager. Følg oss på sosiale medier eller meld deg på nyhetsbrevet vårt for å holde deg oppdatert."
-              />
-            </div>
-          </div>
-        </section> */}
       </main>
 
       <Footer />
-      <Analytics />
     </div>
   );
 }
