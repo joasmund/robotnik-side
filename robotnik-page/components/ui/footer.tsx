@@ -43,10 +43,8 @@ const Footer = () => (
           <Link href="https://sagarobotics.com/" className="block hover:opacity-80 transition-opacity">
             <Image src="/Thorvald.png" alt="Thorvald logo" width={200} height={120} />
           </Link>
-          <Separator className="my-8" />
-          <Link href="https://www.kameleongruppen.no/" className="block hover:opacity-80 transition-opacity">
-            <Image src="/Kameleon.png" alt="kameleon logo" width={200} height={120} />
-          </Link>
+
+          
   
           
         </div>
