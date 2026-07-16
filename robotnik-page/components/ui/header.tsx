@@ -33,9 +33,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
     }
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-            isScrolled ? 'bg-gray-900/70 backdrop-blur-sm' : ''
-        }`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900/70 backdrop-blur-sm`}>
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <Link href="/" onClick={closeMobileMenu}>
                     <Image src="/forsokutenlogo.svg" alt="Robotnik Logo" width={496/8} height={281/8} />
@@ -46,7 +44,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
                     <div className="relative group inline-block">
                         <Button 
                             variant="ghost" 
-                            className={`${isActiveSubPath(['/om-oss', '/ny-student', '/utstyr', '/styret']) ? 'bg-blue-600/20 text-blue-300' : ''}`}
+                            className={`${isActiveSubPath(['/om-oss', '/ny-student', '/fadderuka', '/utstyr', '/styret']) ? 'bg-blue-600/20 text-blue-300' : ''}`}
                         >
                             Om oss
                         </Button>
@@ -63,6 +61,12 @@ const Header = ({ isScrolled }: HeaderProps) => {
                                     className={`flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/ny-student') ? 'bg-blue-100 font-semibold' : ''}`}
                                 >
                                     <span className="w-full">Ny student</span>
+                                </Link>
+                                <Link 
+                                    href="/fadderuka" 
+                                    className={`flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-100/70 ${isActivePath('/fadderuka') ? 'bg-blue-100 font-semibold' : ''}`}
+                                >
+                                    <span className="w-full">Fadderuka</span>
                                 </Link>
                                 <Link 
                                     href="/utstyr" 
@@ -144,7 +148,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
                         {/* Om oss section with submenu */}
                         <div className="space-y-1 mb-4">
                             <div className={`text-white font-semibold text-base px-4 py-3 border-l-4 rounded-r-lg transition-all duration-200 ${
-                                isActiveSubPath(['/om-oss', '/ny-student', '/utstyr', '/styret']) 
+                                isActiveSubPath(['/om-oss', '/ny-student', '/fadderuka', '/utstyr', '/styret']) 
                                     ? 'border-blue-400 bg-blue-600/30 text-blue-200' 
                                     : 'border-gray-600 bg-gray-800/40'
                             }`}>
@@ -172,6 +176,17 @@ const Header = ({ isScrolled }: HeaderProps) => {
                                     onClick={closeMobileMenu}
                                 >
                                     <span className="w-full">Ny student</span>
+                                </Link>
+                                <Link 
+                                    href="/fadderuka" 
+                                    className={`flex items-center w-full px-4 py-3 text-sm rounded-lg transition-all duration-200 touch-manipulation ${
+                                        isActivePath('/fadderuka')
+                                            ? 'text-blue-200 bg-blue-600/40 font-semibold border-l-2 border-blue-400'
+                                            : 'text-gray-300 hover:text-white hover:bg-blue-600/20'
+                                    }`}
+                                    onClick={closeMobileMenu}
+                                >
+                                    <span className="w-full">Fadderuka</span>
                                 </Link>
                                 <Link 
                                     href="/utstyr" 

@@ -4,66 +4,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
+import { FAQItem } from "@/components/ui/faq-item";
+import { useScrollHeader } from "@/hooks/use-scroll-header";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { ChevronDown, Users, Presentation, Handshake, Mail } from "lucide-react";
-import { Analytics } from "@vercel/analytics/next";
-
-// FAQ Item Component
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
-
-const FAQItem = ({ question, answer }: FAQItemProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <button
-        className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 flex justify-between items-center"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="font-medium text-gray-900">{question}</span>
-        <ChevronDown
-          className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-            isOpen ? 'transform rotate-180' : ''
-          }`}
-        />
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-          <p className="text-gray-700 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  );
-};
+import { Users, Presentation, Handshake, Mail } from "lucide-react";
 
 export default function BedriftPage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 50);
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  const { isLoaded, showHeader, isScrolled } = useScrollHeader();
 
   return (
     <div className="min-h-screen bg-white text-gray-200">
@@ -250,7 +197,6 @@ export default function BedriftPage() {
         </section>
       </main>
       <Footer />
-      <Analytics />
     </div>
   );
 }
