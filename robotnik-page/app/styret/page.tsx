@@ -105,7 +105,7 @@ export default function StyretPage() {
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Styremedlemmer 2025/2026</h2>
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">Styremedlemmer 2026/2027</h2>
               <p className="text-lg text-gray-600">Her er våre dedikerte styremedlemmer som jobber for dere hver dag</p>
             </div>
             
@@ -136,6 +136,7 @@ export default function StyretPage() {
               <BoardMember
                 name="Sondre Einvik"
                 position="Arrangementsansvarlig"
+                image="/sondre.jpeg"
               />
             </div>
             
@@ -147,13 +148,14 @@ export default function StyretPage() {
                 image="/haakon.jpg"
               />
               <BoardMember
-                name="Finhas Weldu"
+                name="Luka Tasetovic"
                 position="Markedsføringsansvarlig"
-                image="/finhas.jpg"
+                image="/luka.jpeg"
               />
               <BoardMember
                 name="Mathias Gundersen"
                 position="Faddersjef"
+                image="/mathias.jpg"
               />
             </div>
           </div>
