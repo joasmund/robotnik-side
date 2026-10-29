@@ -5,7 +5,7 @@ import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Calendar, MapPin, ChevronDown, X } from "lucide-react"
+import { Calendar, MapPin, X } from "lucide-react"
 import { Event } from "@/utils/markdownEvents";
 import { useScrollHeader } from "@/hooks/use-scroll-header";
 
@@ -107,7 +107,7 @@ const EventModal = ({ event, isOpen, onClose }: EventModalProps) => {
           {/* Description */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-3 text-gray-900">Om arrangementet</h3>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">{event.description}</p>
+            <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: event.content || '' }} />
           </div>
           
           {/* Footer with price */}
@@ -135,9 +135,6 @@ interface EventCardProps {
 }
 
 const EventCard = ({ event, onOpenModal }: EventCardProps) => {
-  // Check if description is long enough to show "Vis mer"
-  const isLongDescription = event.description.length > 120;
-
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
       <div className="relative h-48">
@@ -157,18 +154,7 @@ const EventCard = ({ event, onOpenModal }: EventCardProps) => {
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-gray-900">{event.title}</h3>
         
-        <div className="text-gray-600 mb-4">
-          <p className="line-clamp-3">{event.description}</p>
-          {isLongDescription && (
-            <button
-              onClick={onOpenModal}
-              className="inline-flex items-center mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
-            >
-              Vis mer
-              <ChevronDown className="w-4 h-4 ml-1" />
-            </button>
-          )}
-        </div>
+        <div className="text-gray-600 mb-4" dangerouslySetInnerHTML={{ __html: event.content || event.description }} />
         
         <div className="space-y-2 mb-4">
           <div className="flex items-center text-gray-700">
