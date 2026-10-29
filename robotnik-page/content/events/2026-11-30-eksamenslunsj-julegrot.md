@@ -6,7 +6,7 @@ time: "12:00"
 location: "Robotikk garasjen, TF-4"
 category: "Sosial"
 price: 0
-image: "/robotnikwide.png"
+image: "/robotnik.png"
 organizer: "Robotnik – Linjeforeningen for anvendt robotikk"
 ---
 

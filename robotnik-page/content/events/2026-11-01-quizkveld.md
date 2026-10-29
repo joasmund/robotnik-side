@@ -6,7 +6,7 @@ time: "18:00"
 location: "Robotnik-rommet, REALTEKbygget"
 category: "Sosial"
 price: 0
-image: "/robotnikwide.png"
+image: "/robotnik.png"
 organizer: "Robotnik – Linjeforeningen for anvendt robotikk"
 ---
 

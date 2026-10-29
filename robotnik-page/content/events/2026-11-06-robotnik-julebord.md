@@ -7,7 +7,7 @@ location: "Festsalen, Ås kulturskole"
 category: "Sosial"
 price: 467
 maxAttendees: 50
-image: "/robotnikwide.png"
+image: "/robotnik.png"
 organizer: "Robotnik – Linjeforeningen for anvendt robotikk"
 ---
 
